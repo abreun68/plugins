@@ -16,6 +16,7 @@ import DataObject.Question;
 public class PertChartQuestion extends QuestionBase {
 
     public PertChartQuestion(EvalObject eval) {
+        this.eval = eval;
     }
 
     @Override
@@ -48,5 +49,6 @@ public class PertChartQuestion extends QuestionBase {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-
+    private EvalObject eval;
+    
 }
