@@ -52,7 +52,7 @@ public interface Plugin
     public Question exploration();
     
     
-    public String modifyQuestion(String s, int num, String l);
+    public String modifyQuestion(String question, int index, String answer);
     
     
 }

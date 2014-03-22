@@ -101,5 +101,14 @@ public class DBQuestion implements Question
     {
         return correctAnswer;
     }
+
+    /**
+     * Method that sets the question.
+     * @param question 
+     */
+    @Override
+    public void setQuestion(String question) {
+        this.question = question;
+    }
     
 }

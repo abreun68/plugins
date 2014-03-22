@@ -4,9 +4,8 @@
  */
 package DataAnalysis;
 
-import DataObject.Datapoint;
-import DataObject.Question;
 import DataObject.Evaluation;
+import DataObject.Question;
 import java.util.ArrayList;
 
 
@@ -20,7 +19,7 @@ public class PertChartPlugin implements Plugin {
         
         this.eval = eval;
         this.questions = eval.getQuestions();
-        
+        this.index = 0;
                 
     }
 
@@ -44,20 +43,52 @@ public class PertChartPlugin implements Plugin {
 
     @Override
     public Question findRecomendation() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        // Makes sure that each time this method is called,  we get a different 
+        // "recommendation" question. It will return null, after the last 
+        // question is return.
+        
+        Question obj = null;
+        if (eval.getEvalType().equalsIgnoreCase("recommendation")) {
+            if (index >= 0 || questions.size() >= index) {
+                obj = questions.get(index);
+                index++;
+            }
+        }
+        return obj;
+    }//end of findRecomendation()
 
     @Override
     public Question exploration() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        // Makes sure that each time this method is called,  we get a different 
+        // "exploration" question. It will return null, after the last 
+        // question is return.
+        Question obj = null;
+        if (eval.getEvalType().equalsIgnoreCase("exploration")) {
+            if (index >= 0 || questions.size() >= index) {
+                obj = questions.get(index);
+                index++;
+            }
+        }
+        return obj;
+    }//end of exploration()
 
     @Override
-    public String modifyQuestion(String s, int num, String l) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public String modifyQuestion(String question, int index, String answer) {
+
+        if (index >= 0 || questions.size() >= index) {
+            questions.get(index).setQuestion(question);
+            questions.get(index).setAnswer(answer);
+        }
+        // Returning the string passed, was taken from one of  the examples
+        return question;
+
     }
 
     private Evaluation eval;
     private ArrayList<Question> questions;
+    /**
+     * Current Question index
+     */
+    private int index;
 
 }

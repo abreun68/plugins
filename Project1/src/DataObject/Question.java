@@ -53,4 +53,11 @@ public interface Question {
      */
     void setAnswer(String correctAnswer);
     
+     /**
+     * Sets the question
+     * @param question
+     */
+    void setQuestion(String question);
+    
+    
 }
