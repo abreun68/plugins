@@ -79,13 +79,15 @@ public class PertChartPlugin implements Plugin {
             questions.get(index).setQuestion(question);
             questions.get(index).setAnswer(answer);
         }
-        // Returning the string passed, was taken from one of  the examples
+        // Returning the string passed. Not sure why. we are mimicking here
+        // what we saw in one of the examples.
         return question;
 
     }
 
     private Evaluation eval;
     private ArrayList<Question> questions;
+    
     /**
      * Current Question index
      */
