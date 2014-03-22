@@ -44,7 +44,7 @@ public class LinePlugin implements Plugin
             }            
         }       
         //create a new question object 
-        Question newQuestion = new DBQuestion("Find the maxium value on the Graph", 30, "s", 0);
+        Question newQuestion = new EvalQuestion("Find the maxium value on the Graph", 30, "s", 0);
         newQuestion.setAnswer(new Double(max).toString());
         return newQuestion;
     }
@@ -68,7 +68,7 @@ public class LinePlugin implements Plugin
             }            
         }       
         //create a new question object 
-        Question newQuestion = new DBQuestion("Find the mininum value on the Graph", 30, "s", 0);
+        Question newQuestion = new EvalQuestion("Find the mininum value on the Graph", 30, "s", 0);
         newQuestion.setAnswer(new Double(min).toString());
         return newQuestion;
     }
@@ -131,7 +131,7 @@ public class LinePlugin implements Plugin
             }
             
         //create a new question object 
-        Question newQuestion = new DBQuestion("Find any outliers.", 45, "s", 0);
+        Question newQuestion = new EvalQuestion("Find any outliers.", 45, "s", 0);
         
         if(answer.isEmpty())
         {
