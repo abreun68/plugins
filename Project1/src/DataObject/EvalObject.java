@@ -6,15 +6,13 @@ package DataObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import DataObject.Question;
-import DataObject.Datapoint;
 
 /**
  *Class EvalObject holds all information about an evaluation setup
  * Information in this Class is given to the user 
  * @author Doug Taggart
  */
-public class EvalObject
+public class EvalObject implements Evaluation
 {
 
     private String title;
@@ -42,6 +40,7 @@ public class EvalObject
      * 
      * @return title 
      */
+    @Override
     public String getTitle()
     {
         return title;
@@ -52,6 +51,7 @@ public class EvalObject
      * 
      * @return EvalType
      */
+    @Override
     public String getEvalType()
     {
         return EvalType;
@@ -62,11 +62,13 @@ public class EvalObject
      * 
      * @param question 
      */
+    @Override
     public void addQuestion(Question question)
     {
         questions.add(question);
     }
     
+    @Override
     public HashMap<String, String> getMany2Many()
     {
         return many2many;
@@ -74,15 +76,17 @@ public class EvalObject
     
     
     /**
-     * returns the entire Question ArrayList
+     * returns the entire DBQuestion ArrayList
      * 
      * @return questions 
      */
+    @Override
     public ArrayList<Question> getQuestions()
     {
         return questions;
     }
     
+    @Override
     public ArrayList<Datapoint> getDatapoints()
     {
         return datapoints;
@@ -93,6 +97,7 @@ public class EvalObject
      * Use to print out the contents of the Eval Object
      * For Testing only
      */
+    @Override
     public void test()
     {
         System.out.println("title: " + this.title);
