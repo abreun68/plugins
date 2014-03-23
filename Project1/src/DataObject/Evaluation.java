@@ -34,7 +34,7 @@ public interface Evaluation {
     HashMap<String, String> getMany2Many();
 
     /**
-     * returns the entire DBQuestion ArrayList
+     * returns the entire Question ArrayList
      *
      * @return questions
      */
@@ -51,6 +51,17 @@ public interface Evaluation {
      * Use to print out the contents of the Eval Object
      * For Testing only
      */
+    
+    /**
+     * This method allows the user to create a free standing question, that is
+     * not part of the underlying pool of questions.
+     * @param question the question
+     * @param time suggested length of question 
+     * @param answerType the type of response the user should give
+     * @param score how other users have rated this questions
+     */
+    Question buildQuestion(String question, int time, String answerType, int score);
+    
     void test();
     
 }

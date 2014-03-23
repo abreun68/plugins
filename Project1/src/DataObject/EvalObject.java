@@ -117,6 +117,10 @@ public class EvalObject implements Evaluation
         
         
     }
-    
+
+    @Override
+    public Question buildQuestion(String question, int time, String answerType, int score) {
+        return new EvalQuestion(question, time, answerType, score);
+    }
     
 }
