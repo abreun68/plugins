@@ -30,7 +30,7 @@ public class EvalQuestion implements Question
      * @param answerType the type of response the user should give
      * @param score how other users have rated this questions
      */
-    
+    // Doug Question: which are the answerType question? 
     public EvalQuestion(String question, int time, String answerType, int score)
     {
         this.question = question;

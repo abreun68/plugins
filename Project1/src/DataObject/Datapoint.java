@@ -37,6 +37,7 @@ public class Datapoint
      
     public Datapoint(String label, String group, String valueX, double valueY, double percent, int edges)
     {
+        //  Doug Question: why valueX is a string while valueY is a double??
         this.label = label;
         this.group = group;
         this.valueX = valueX;

@@ -15,8 +15,14 @@ import DataObject.Question;
  * Min Questions
  * Max Questions
  * 
- * @author Dooug Taggart
+ * @author Doug Taggart
  */
+
+//This was originally the "QuestionBase" abstract class, which plugins 
+//implementation were suppose to extend. The decision to change it to an 
+//interface is based on the fact that the class didn't implement any behaviour,
+//for the subclasses to inherit.
+
 public interface Plugin
 {
     
@@ -54,5 +60,8 @@ public interface Plugin
     
     public String modifyQuestion(String question, int index, String answer);
     
-    
+    /**
+     * @return the total number of questions in a plugin.
+     */
+    public int size();
 }

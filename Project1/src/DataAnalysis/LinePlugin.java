@@ -176,6 +176,11 @@ public class LinePlugin implements Plugin
         return s;
         
     }
+
+    @Override
+    public int size() {
+        return 0;
+    }
     
     
     

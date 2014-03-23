@@ -57,10 +57,15 @@ public interface Evaluation {
      * not part of the underlying pool of questions.
      * @param question the question
      * @param time suggested length of question 
-     * @param answerType the type of response the user should give
+     * @param answerType the type of response the user should give. 
+     * 's' for string
+     * 'i' for integer
+     * 'd' for double
      * @param score how other users have rated this questions
      */
     Question buildQuestion(String question, int time, String answerType, int score);
+    
+    
     
     void test();
     
