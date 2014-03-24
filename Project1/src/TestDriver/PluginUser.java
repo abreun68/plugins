@@ -4,14 +4,9 @@ package TestDriver;
 import DataAnalysis.Plugin;
 import DataObject.Question;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Test Driver.
+ * This class is for TESTING PURPOSES ONLY. It is suppose to simulate a user of
+ * the plugin.
  * @author Nacer Abreu
  */
 public class PluginUser {
