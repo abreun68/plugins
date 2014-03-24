@@ -18,40 +18,58 @@ public interface Evaluation {
      */
     void addQuestion(Question question);
 
-    
-    /**
-     * Adds a question to th objects ArrayList of Datapoints
-     *
-     * @param datapoint
-     */
-    void addDatapoint(Datapoint datapoint);
-    
-    
-    ArrayList<Datapoint> getDatapoints();
-
-    /**
-     * Returns the type of evaluation (1 of 7)
-     *
-     * @return EvalType
-     */
-    String getEvalType();
-
-    HashMap<String, String> getMany2Many();
-
     /**
      * returns the entire Question ArrayList
      *
      * @return questions
      */
-    ArrayList<Question> getQuestions();
+    ArrayList<Question> getQuestions();    
+    
+    /**
+     * Adds a question to the objects ArrayList of Datapoints
+     *
+     * @param datapoint
+     */
+    void addDatapoint(Datapoint datapoint);
+    
 
+    /**
+     * returns the entire Datapoints ArrayList
+     *
+     * @returns datapoints
+     */    
+    ArrayList<Datapoint> getDatapoints();
+
+    /**
+     * Returns the type of evaluation (1 of 7)
+     * 
+     * 1. Evaluates environments and work practices
+     * 2. Evaluates visual data analysis and reasoning 
+     * 3. Evaluates communication through visualization
+     * 4. Evaluates collaborative data analysis
+     * 5. Evaluates user performance
+     * 6. Evaluates user experience
+     * 7. Automated evaluation of visualizations
+     *
+     * @return EvalType
+     */
+    String getEvalType();
+
+    
+    /**
+     * NEEDS DOCUMENTATION
+     *
+     * @return hashmap
+     */    
+    HashMap<String, String> getMany2Many();
+
+    
     /**
      * returns the title of the evaluation
      *
      * @return title
      */
     String getTitle();
-
 
     
     /**
