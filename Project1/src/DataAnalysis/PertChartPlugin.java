@@ -17,7 +17,15 @@ public class PertChartPlugin implements Plugin {
         this.eval = eval;
         this.questions = eval.getQuestions();
         this.index = 0;
-
+        
+        append("Did the tasks, in this visualization, follow a logical order?");
+	append("Were the sub-tasks clearly labeled?");  
+	append("Was the visualization too detailed?"); 
+	append("Was the critical path easy to follow?"); 
+	append("Was the visualization conducive to decision making?"); 
+	append("Who performed the task faster or more efficiently?");
+        append("Did each task, or sub-task, defined a completion (duration" + 
+                ") time?");
     }
 
     @Override
@@ -45,12 +53,12 @@ public class PertChartPlugin implements Plugin {
         // question is return.
 
         Question obj = null;
-        if (eval.getEvalType().equalsIgnoreCase("recommendation")) {
-            if ((this.index >= 0) && (index < questions.size())) {
-                obj = questions.get(this.index);
-                this.index++;
-            }
+
+        if ((this.index >= 0) && (index < questions.size())) {
+            obj = questions.get(this.index);
+            this.index++;
         }
+
         return obj;
     }//end of findRecomendation()
 
@@ -60,12 +68,12 @@ public class PertChartPlugin implements Plugin {
         // "exploration" question. It will return null, after the last 
         // question is return.
         Question obj = null;
-        if (eval.getEvalType().equalsIgnoreCase("exploration")) {
-            if ((this.index >= 0) && (this.index < questions.size())) {
-                obj = questions.get(this.index);
-                this.index++;
-            }
+
+        if ((this.index >= 0) && (this.index < questions.size())) {
+            obj = questions.get(this.index);
+            this.index++;
         }
+
         return obj;
     }//end of exploration()
 
@@ -87,6 +95,20 @@ public class PertChartPlugin implements Plugin {
         return questions.size();
     }
     
+    /**
+     * This method will append to the list of "canned" questions, the ones
+     * particular to this plugin. This method makes the following assumptions:
+     * 1. The time suggested length of question is 30 seconds 2. The type of
+     * answer is always a string. 3. The question is always rated as 0 (zero)
+     */
+    private void append(String question) {
+        int time = 30;
+        int score = 0;
+        String type = "s";
+        Question obj = eval.buildQuestion(question, time, type, score);
+        questions.add(obj);
+
+    }
     
     private Evaluation eval;
     private ArrayList<Question> questions;

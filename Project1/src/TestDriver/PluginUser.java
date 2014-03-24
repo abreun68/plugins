@@ -12,9 +12,9 @@ import DataObject.Question;
 public class PluginUser {
 
     public static void main(String[] args) {
-        // pertChartTest();
+         pertChartTest();
         // dataMapTest();
-        parallelCoordinatesTest();
+        // parallelCoordinatesTest();
     }
 
     public static void pertChartTest() {
