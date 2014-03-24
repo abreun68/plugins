@@ -42,7 +42,10 @@ public interface Plugin
     public Question findOutlier();
     
     /**
-     * 
+     * A typical recommendation questions would look like this : 
+     * "If i purchased X what other things might I be intrusted in?" 
+     * So each time you generate a recommendation question it should pick a 
+     * different value to base the recommendations on. 
      * 
      * @return a question asking a user to recommend something  
      */

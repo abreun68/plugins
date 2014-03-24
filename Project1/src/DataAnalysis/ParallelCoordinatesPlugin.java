@@ -28,7 +28,7 @@ public class ParallelCoordinatesPlugin implements Plugin {
     public Question findMax() {
         double max = eval.getDatapoints().get(0).getValueY();
         
-        //itterate through all of the datapoints find the min
+        //iterate through all of the datapoints find the min
         for(int i =1; i < eval.getDatapoints().size(); i++)
         {
         
@@ -70,18 +70,8 @@ public class ParallelCoordinatesPlugin implements Plugin {
 
     @Override
     public Question findRecomendation() {
-        // Makes sure that each time this method is called,  we get a different 
-        // "recommendation" question. It will return null, after the last 
-        // question is return.
-
-        Question obj = null;
-
-        if ((this.index >= 0) && (index < questions.size())) {
-            obj = questions.get(this.index);
-            this.index++;
-        }
-
-        return obj;
+        // This kind of plugin does not contain any recommendation questions
+        return null;
     }//end of findRecomendation()
 
     @Override

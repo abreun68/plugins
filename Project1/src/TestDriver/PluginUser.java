@@ -20,26 +20,46 @@ public class PluginUser {
     public static void pertChartTest() {
         System.out.println("Pert Chart -- Questions");
         System.out.println("=======================\n");
-        Plugin pertChartPlugin = PluginFactory.getPertChartPlugin();
-        // Simulate asking several questions
-
-        for (int x = 0; x < pertChartPlugin.size(); x++) {
-            Question exploration = pertChartPlugin.exploration();
-            String question = exploration.getQuestion();
-            System.out.println(x + " - Question : " + question);
-        }
-
-        System.out.println("\n=======================\n\n");
+        Plugin plugin = PluginFactory.getPertChartPlugin();
+        callExplorationMethod(plugin);
     }
 
     public static void dataMapTest() {
         System.out.println("Data Map   -- Questions");
         System.out.println("=======================\n");
-        Plugin dataMapPlugin = PluginFactory.getDataMapPlugin();
-        // Simulate asking several questions
-
-        for (int x = 0; x < dataMapPlugin.size(); x++) {
-            Question exploration = dataMapPlugin.exploration();
+        Plugin plugin = PluginFactory.getDataMapPlugin();
+        callExplorationMethod(plugin);
+    }
+    
+    public static void parallelCoordinatesTest() {
+        System.out.println(" Parallel Coordinates -- Questions");
+        System.out.println("=======================\n");
+        Plugin plugin = PluginFactory.getParallelCoordinatesPlugin();
+        callExplorationMethod(plugin);
+        
+        Question maxQuestion = plugin.findMax();
+        String question = maxQuestion.getQuestion();
+        
+        if (question != null) {
+            System.out.println("findmax - Question : " + question);        
+        }
+        
+        Question minQuestion = plugin.findMin();
+        question = minQuestion.getQuestion();
+        if (question != null) {
+            System.out.println("findmin - Question : " + question);
+        }
+        
+        System.out.println("\n=======================\n\n");
+    }
+    
+    /**
+     * This method simulates calling the Plugin::exploration() method
+     */
+    private static void callExplorationMethod(Plugin plugin) {
+        
+        for (int x = 0; x < plugin.size(); x++) {
+            Question exploration = plugin.exploration();
             String question = exploration.getQuestion();
             System.out.println(x + " - Question : " + question);
         }
@@ -47,28 +67,5 @@ public class PluginUser {
         System.out.println("\n=======================\n\n");
     }
     
-    public static void parallelCoordinatesTest() {
-        System.out.println(" Parallel Coordinates -- Questions");
-        System.out.println("=======================\n");
-        Plugin parallelCoordinatesPlugin = PluginFactory.getParallelCoordinatesPlugin();
-        // Simulate asking several questions
 
-        for (int x = 0; x < parallelCoordinatesPlugin.size(); x++) {
-            Question exploration = parallelCoordinatesPlugin.exploration();
-            String question = exploration.getQuestion();
-            System.out.println(x + " - Question : " + question);
-        }
-        
-        Question exploration = parallelCoordinatesPlugin.findMax();
-        String question = exploration.getQuestion();
-        System.out.println("findmax - Question : " + question);        
-
-        
-        exploration = parallelCoordinatesPlugin.findMin();
-        question = exploration.getQuestion();
-        System.out.println("findmin - Question : " + question);  
-        
-        
-        System.out.println("\n=======================\n\n");
-    }
 }
