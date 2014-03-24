@@ -11,41 +11,43 @@ import DataObject.Question;
  */
 
 /**
- *
- * @author nasser
+ * Test Driver.
+ * @author Nacer Abreu
  */
 public class PluginUser {
 
-    public static void main(String [] args)
-	{
+    public static void main(String[] args) {
+        pertChartTest();
+        dataMapTest();
+    }
+
+    public static void pertChartTest() {
         System.out.println("Pert Chart -- Questions");
         System.out.println("=======================\n");
-        Plugin pertChartPlugin = PluginFactory.getPertChartPlugin();        
+        Plugin pertChartPlugin = PluginFactory.getPertChartPlugin();
         // Simulate asking several questions
-        
+
         for (int x = 0; x < pertChartPlugin.size(); x++) {
             Question exploration = pertChartPlugin.exploration();
             String question = exploration.getQuestion();
             System.out.println(x + " - Question : " + question);
         }
-        
+
         System.out.println("\n=======================\n\n");
-        
-        
+    }
+
+    public static void dataMapTest() {
         System.out.println("Data Map   -- Questions");
         System.out.println("=======================\n");
-        Plugin dataMapPlugin = PluginFactory.getDataMapPlugin();        
+        Plugin dataMapPlugin = PluginFactory.getDataMapPlugin();
         // Simulate asking several questions
-        
+
         for (int x = 0; x < dataMapPlugin.size(); x++) {
             Question exploration = dataMapPlugin.exploration();
             String question = exploration.getQuestion();
             System.out.println(x + " - Question : " + question);
         }
-        
+
         System.out.println("\n=======================\n\n");
-        
-        
     }
-    
 }

@@ -79,11 +79,9 @@ public class DataMapPlugin implements Plugin {
             questions.get(index).setQuestion(question);
             questions.get(index).setAnswer(answer);
         }
-        // Doug Question : Returning the string passed. Not sure why. we are 
-        // Doug Question : mimicking here what we saw in one of the examples. 
-        // Doug Question : Should it return a boolean instead.
+
         return question;
-    }//end of modifyQuestion
+    }//end of modifyQuestion()
 
     @Override
     public int size() {
