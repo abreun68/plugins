@@ -17,8 +17,9 @@ import DataObject.Question;
 public class PluginUser {
 
     public static void main(String[] args) {
-        pertChartTest();
-        dataMapTest();
+        // pertChartTest();
+        // dataMapTest();
+        parallelCoordinatesTest();
     }
 
     public static void pertChartTest() {
@@ -48,6 +49,31 @@ public class PluginUser {
             System.out.println(x + " - Question : " + question);
         }
 
+        System.out.println("\n=======================\n\n");
+    }
+    
+    public static void parallelCoordinatesTest() {
+        System.out.println(" Parallel Coordinates -- Questions");
+        System.out.println("=======================\n");
+        Plugin parallelCoordinatesPlugin = PluginFactory.getParallelCoordinatesPlugin();
+        // Simulate asking several questions
+
+        for (int x = 0; x < parallelCoordinatesPlugin.size(); x++) {
+            Question exploration = parallelCoordinatesPlugin.exploration();
+            String question = exploration.getQuestion();
+            System.out.println(x + " - Question : " + question);
+        }
+        
+        Question exploration = parallelCoordinatesPlugin.findMax();
+        String question = exploration.getQuestion();
+        System.out.println("findmax - Question : " + question);        
+
+        
+        exploration = parallelCoordinatesPlugin.findMin();
+        question = exploration.getQuestion();
+        System.out.println("findmin - Question : " + question);  
+        
+        
         System.out.println("\n=======================\n\n");
     }
 }

@@ -9,13 +9,13 @@ import DataObject.Question;
 import java.util.ArrayList;
 
 /**
- * Pert Chart Plugin implementation
+ *  Parallel Coordinates Plugin implementation
  *
  * @author Nacer Abreu
  */
-public class PertChartPlugin implements Plugin {
+public class ParallelCoordinatesPlugin implements Plugin {
 
-    public PertChartPlugin(Evaluation eval) {
+    public ParallelCoordinatesPlugin(Evaluation eval) {
 
         this.eval = eval;
         this.questions = eval.getQuestions();
@@ -25,14 +25,40 @@ public class PertChartPlugin implements Plugin {
 
     @Override
     public Question findMax() {
-        // This kind of plugin does not contain min/max questions
-        return null;
+        double max = eval.getDatapoints().get(0).getValueY();
+        
+        //itterate through all of the datapoints find the min
+        for(int i =1; i < eval.getDatapoints().size(); i++)
+        {
+        
+            if( eval.getDatapoints().get(i).getValueY() > max)
+            {
+                max = eval.getDatapoints().get(i).getValueY();
+            }            
+        }       
+        //create a new question object 
+        Question newQuestion = eval.buildQuestion("What is the maximum value?", 30, "s", 0);
+        newQuestion.setAnswer(new Double(max).toString());
+        return newQuestion;
     }
 
     @Override
     public Question findMin() {
-        // This kind of plugin does not contain min/max questions
-        return null;
+        double min = eval.getDatapoints().get(0).getValueY();
+        
+        //iterate through all of the datapoints find the min
+        for(int i =1; i < eval.getDatapoints().size(); i++)
+        {
+        
+            if( eval.getDatapoints().get(i).getValueY() < min)
+            {
+                min = eval.getDatapoints().get(i).getValueY();
+            }            
+        }       
+        //create a new question object 
+        Question newQuestion = eval.buildQuestion("What is the minimum value?", 30, "s", 0);
+        newQuestion.setAnswer(new Double(min).toString());
+        return newQuestion;
     }
 
     @Override
@@ -79,11 +105,9 @@ public class PertChartPlugin implements Plugin {
             questions.get(index).setQuestion(question);
             questions.get(index).setAnswer(answer);
         }
-        // Doug Question : Returning the string passed. Not sure why. we are 
-        // Doug Question : mimicking here what we saw in one of the examples. 
-        // Doug Question : Should it return a boolean instead.
+
         return question;
-    }//end of modifyQuestion
+    }//end of modifyQuestion()
 
     @Override
     public int size() {

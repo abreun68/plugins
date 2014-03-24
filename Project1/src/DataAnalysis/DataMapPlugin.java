@@ -24,7 +24,7 @@ public class DataMapPlugin implements Plugin {
     }
 
     @Override
-    public Question finMax() {
+    public Question findMax() {
         // This kind of plugin does not contain min/max questions
         return null;
     }

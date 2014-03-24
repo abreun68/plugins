@@ -30,7 +30,7 @@ public class LinePlugin implements Plugin
      * @return a question about a max value on the graph
      */
     @Override
-    public Question finMax()
+    public Question findMax()
     {   
         double max = eval.getDatapoints().get(0).getValueY();
         

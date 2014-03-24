@@ -122,5 +122,10 @@ public class EvalObject implements Evaluation
     public Question buildQuestion(String question, int time, String answerType, int score) {
         return new EvalQuestion(question, time, answerType, score);
     }
+
+    @Override
+    public void addDatapoint(Datapoint datapoint) {
+        datapoints.add(datapoint);
+    }
     
 }

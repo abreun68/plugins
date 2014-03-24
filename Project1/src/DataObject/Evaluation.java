@@ -22,6 +22,15 @@ public interface Evaluation {
      */
     void addQuestion(Question question);
 
+    
+    /**
+     * Adds a question to th objects ArrayList of Datapoints
+     *
+     * @param datapoint
+     */
+    void addDatapoint(Datapoint datapoint);
+    
+    
     ArrayList<Datapoint> getDatapoints();
 
     /**

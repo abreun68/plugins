@@ -30,7 +30,7 @@ public interface Plugin
      * 
      * @return a question about a max value on the graph
      */
-    public Question finMax( );
+    public Question findMax( );
     
     /**
      * 
