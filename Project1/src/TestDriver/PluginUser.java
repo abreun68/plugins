@@ -14,7 +14,7 @@ public class PluginUser {
     public static void main(String[] args) {
          pertChartTest();
         // dataMapTest();
-        // parallelCoordinatesTest();
+         parallelCoordinatesTest();
     }
 
     public static void pertChartTest() {
