@@ -76,16 +76,12 @@ public class ParallelCoordinatesPlugin implements Plugin {
 
     @Override
     public Question exploration() {
-        // Makes sure that each time this method is called,  we get a different 
-        // "exploration" question. It will return null, after the last 
-        // question is return.
-        Question obj = null;
 
+        Question obj = null;
         if ((this.index >= 0) && (this.index < questions.size())) {
             obj = questions.get(this.index);
             this.index++;
         }
-
         return obj;
     }//end of exploration()
 
@@ -108,8 +104,9 @@ public class ParallelCoordinatesPlugin implements Plugin {
     /**
      * This method will append to the list of "canned" questions, the ones
      * particular to this plugin. This method makes the following assumptions:
-     * 1. The time suggested length of question is 30 seconds 2. The type of
-     * answer is always a string. 3. The question is always rated as 0 (zero)
+     * 1. The time suggested length of question is 30 seconds 
+     * 2. The type of answer is always a string. 
+     * 3. The question is always rated as 0 (zero)
      */
     private void append(String question) {
         int time = 30;

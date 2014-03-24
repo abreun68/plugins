@@ -52,17 +52,29 @@ public interface Plugin
     public Question findRecomendation(); 
     
     /**
-     * 
+     * This method returns a question that can be specific to this plugin or
+     * one of the generic ("canned") question from the underlying database.
+     * Each time it is called, it will return a different question, up to the 
+     * number of available question for this plugin (size). Once this number 
+     * of calls are issue, the method return null values. 
      * @return a question about exploring the graph 
      */
     public Question exploration();
     
-    
+    /**
+     * This method is use to modify any of the exploration or specific question 
+     * related to this plugin. 
+     * @param question
+     * @param index
+     * @param answer
+     * @return 
+     */
     public String modifyQuestion(String question, int index, String answer);
     
     /**     
-     * 
-     * 
+     * This method returns the total number of questions for this plugin. It is
+     * important that when making calls to the exploration method we do not go 
+     * beyond this size since the return after that it will return null.
      * @return the total number of questions in a plugin.
      */
     public int size();

@@ -54,16 +54,12 @@ public class PertChartPlugin implements Plugin {
 
     @Override
     public Question exploration() {
-        // Makes sure that each time this method is called,  we get a different 
-        // "exploration" question. It will return null, after the last 
-        // question is return.
+        
         Question obj = null;
-
         if ((this.index >= 0) && (this.index < questions.size())) {
             obj = questions.get(this.index);
             this.index++;
         }
-
         return obj;
     }//end of exploration()
 
@@ -75,8 +71,8 @@ public class PertChartPlugin implements Plugin {
             questions.get(index).setAnswer(answer);
         }
         // Doug Question : Returning the string passed. Not sure why. we are 
-        // Doug Question : mimicking here what we saw in one of the examples. 
-        // Doug Question : Should it return a boolean instead.
+        // Doug Question : mimicking here, what we saw in one of the examples. 
+        // Doug Question : Should it return a boolean instead?
         return question;
     }//end of modifyQuestion
 
@@ -88,8 +84,9 @@ public class PertChartPlugin implements Plugin {
     /**
      * This method will append to the list of "canned" questions, the ones
      * particular to this plugin. This method makes the following assumptions:
-     * 1. The time suggested length of question is 30 seconds 2. The type of
-     * answer is always a string. 3. The question is always rated as 0 (zero)
+     * 1. The time suggested length of question is 30 seconds 
+     * 2. The type of answer is always a string. 
+     * 3. The question is always rated as 0 (zero)
      */
     private void append(String question) {
         int time = 30;
