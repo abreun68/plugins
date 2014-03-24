@@ -1,14 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package DataObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- *Class EvalObject holds all information about an evaluation setup
+ * Class EvalObject holds all information about an evaluation setup
  * Information in this Class is given to the user 
  * @author Doug Taggart
  */
@@ -22,7 +19,7 @@ public class EvalObject implements Evaluation
     private HashMap<String, String> many2many;
     
     /**
-     * Constructor for creating the EVal Object
+     * Constructor for creating the Eval Object
      * @param title the name of the evaluation
      * @param EvalType the type of evaluation
      */
