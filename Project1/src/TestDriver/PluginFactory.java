@@ -82,12 +82,6 @@ public class PluginFactory {
 
     public static Plugin getParallelCoordinatesPlugin() {
 
-       // Simulates the questions obtained by the DB Manager
-        ArrayList<String> parallelCoordinatesQuestions = new ArrayList<String>();
-        parallelCoordinatesQuestions.add("Canned Question 'a'?");
-        parallelCoordinatesQuestions.add("Canned Question 'b'?");
-        parallelCoordinatesQuestions.add("Canned Question 'c'?");
-        parallelCoordinatesQuestions.add("Canned Question 'd'?");
 
         // Create Evaluation Object
         EvalObject evalObject = new EvalObject("Parallel Coordinates Evaluation",
