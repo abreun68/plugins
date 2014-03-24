@@ -56,10 +56,7 @@ public interface Evaluation {
      */
     String getTitle();
 
-    /**
-     * Use to print out the contents of the Eval Object
-     * For Testing only
-     */
+
     
     /**
      * This method allows the user to create a free standing question, that is
@@ -74,8 +71,6 @@ public interface Evaluation {
      */
     Question buildQuestion(String question, int time, String answerType, int score);
     
-    
-    
-    void test();
+
     
 }
