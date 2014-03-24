@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package DataAnalysis;
 
 import DataObject.Question;
@@ -17,12 +14,12 @@ import DataObject.Question;
  * 
  * @author Doug Taggart
  */
-
-//This was originally the "QuestionBase" abstract class, which plugins 
-//implementation were suppose to extend. The decision to change it to an 
-//interface is based on the fact that the class didn't implement any behaviour,
-//for the subclasses to inherit.
-
+/** 
+ * This was originally the "QuestionBase" abstract class, which "plugins" 
+ * implementation were suppose to extend. The decision to change it to an 
+ * interface is based on the fact that the class didn't implement any behavior,
+ * for the subclasses to inherit.
+ */
 public interface Plugin
 {
     
@@ -60,7 +57,9 @@ public interface Plugin
     
     public String modifyQuestion(String question, int index, String answer);
     
-    /**
+    /**     
+     * 
+     * 
      * @return the total number of questions in a plugin.
      */
     public int size();
