@@ -14,6 +14,7 @@ public class PluginUser {
     public static void main(String[] args) {
          pertChartTest();
          dataMapTest();
+         treeMapTest();
          parallelCoordinatesTest();
     }
 
@@ -27,13 +28,23 @@ public class PluginUser {
     }
 
     public static void dataMapTest() {
-        System.out.println("Data Map   -- Questions");
+        System.out.println("Data Map -- Questions");
         System.out.println("=======================\n");
         Plugin plugin = PluginFactory.getDataMapPlugin();
         callExplorationMethod(plugin);
         callFindMinMaxMethod(plugin);
         System.out.println("\n=======================\n\n");
     }
+    
+    public static void treeMapTest() {
+        System.out.println("Tree Map -- Questions");
+        System.out.println("=======================\n");
+        Plugin plugin = PluginFactory.getTreeMapPlugin();
+        callExplorationMethod(plugin);
+        callFindMinMaxMethod(plugin);
+        System.out.println("\n=======================\n\n");
+    }
+    
     
     public static void parallelCoordinatesTest() {
         System.out.println(" Parallel Coordinates -- Questions");

@@ -5,6 +5,7 @@ import DataAnalysis.DataMapPlugin;
 import DataAnalysis.ParallelCoordinatesPlugin;
 import DataAnalysis.PertChartPlugin;
 import DataAnalysis.Plugin;
+import DataAnalysis.TreeMapPlugin;
 import DataObject.Datapoint;
 import DataObject.EvalObject;
 import DataObject.EvalQuestion;
@@ -48,9 +49,8 @@ public class PluginFactory {
         }        
         
         // Create Plugin
-        PertChartPlugin pertChartPlugin = new PertChartPlugin(evalObject);
-        
-        return pertChartPlugin;
+        Plugin plugin = new PertChartPlugin(evalObject);
+        return plugin;
     }//end of getPertChartPlugin()
         
     public static Plugin getDataMapPlugin() {
@@ -75,11 +75,38 @@ public class PluginFactory {
         }  
         
         // Create Plugin
-        DataMapPlugin dataMapPlugin = new DataMapPlugin(evalObject);
-
-        return dataMapPlugin;
+        Plugin plugin = new DataMapPlugin(evalObject);
+        return plugin;
+        
     }//end of getDataMapPlugin()
 
+    public static Plugin getTreeMapPlugin() {
+
+        // Create Evaluation Object
+        EvalObject evalObject = new EvalObject("Tree Map Evaluation",
+                "Evaluates visual data analysis and reasoning",
+                new ArrayList<Datapoint>(),
+                new HashMap<String, String>());
+        
+        // Add Questions
+        Iterator<String> it = getCannedQuestions().iterator();
+        while (it.hasNext()) {
+            String question = it.next();
+            evalObject.addQuestion(new EvalQuestion(question, 30, "s", 0));
+        }
+        
+        // Add Datapoints
+        for (int i = 20; i < 100; i++) {
+            evalObject.addDatapoint(new Datapoint("label", "group", "valueX",
+                    i, i, 3));
+        }  
+        
+        // Create Plugin
+        Plugin plugin = new TreeMapPlugin(evalObject);
+        return plugin;
+        
+    }//end of getTreeMapPlugin()    
+    
     public static Plugin getParallelCoordinatesPlugin() {
 
 
@@ -101,15 +128,11 @@ public class PluginFactory {
             evalObject.addDatapoint(new Datapoint("label", "group", "valueX",
                     i, 30, 3));
         }
-        
-        
+                
         // Creates plugin
-        ParallelCoordinatesPlugin parallelCoordinatesPlugin = 
-                new ParallelCoordinatesPlugin(evalObject);
-
+        Plugin plugin = new ParallelCoordinatesPlugin(evalObject);
+        return plugin;
         
-        // Return plugin
-        return parallelCoordinatesPlugin;
     }//end of getParallelCoordinatesPlugin()
 
     private static ArrayList<String> getCannedQuestions() {
