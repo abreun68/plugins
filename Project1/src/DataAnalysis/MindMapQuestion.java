@@ -9,6 +9,14 @@ public class MindMapQuestion extends QuestionBase {
 	
 	public MindMapQuestion(EvalObject eval) {
 		this.eval = eval;
+		
+		append("Is the primary idea clearly defined at the center?");
+		append("Is color being use to encode or group ideas?");
+		append("Is line thickness being use to denote hierarchy (an outline) from the center out to the edge branches?");
+		append("Does the visualization uses images, symbols and codes?");
+		append("Do all lines connect back to the center?");
+		append("Are branching easy to follow?");
+		append("Does this visualization represent a case of digging to the root causes of a problem? Or, does it represent a summary of some information?");
 	}
 
 	@Override

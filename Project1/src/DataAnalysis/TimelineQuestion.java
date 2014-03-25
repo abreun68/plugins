@@ -9,6 +9,15 @@ public class TimelineQuestion extends QuestionBase {
 	
 	public TimelineQuestion(EvalObject eval) {
 		this.eval = eval;
+		
+		append("Who had more events in a timeframe?");
+		append("Who had longer timeline?");
+		append("Who had shorter timeline?");
+		append("Is the idea of chronological sequence present in the visualization?");
+		append("Is the timeline divided into segments?");
+		append("Does the timeline visualization label the units of time used?");
+		append("Does the visualization contain multiple timelines?");
+		append("Are events stacked? If so, does it look cluttered?");
 	}
 
 	@Override

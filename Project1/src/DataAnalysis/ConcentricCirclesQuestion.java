@@ -9,6 +9,14 @@ public class ConcentricCirclesQuestion extends QuestionBase {
 
 	public ConcentricCirclesQuestion(EvalObject eval) {
 		this.eval = eval;
+		
+		append("What’s the total population of users?");
+		append("What percentage is each section of total population?");
+		append("What does the center of the circle represent?");
+		append("What does the outer ring of the circle represent?");
+		append("Does the number of rings have an impact on the visualization? ");
+		append("Are the colors aiding in the understanding of the visualization?");
+		append("Does the location of the center circles have an effect on the visualization?");
 	}
 
 	@Override

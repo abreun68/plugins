@@ -3,12 +3,20 @@ package DataAnalysis;
 import DataObject.EvalObject;
 import DataObject.Question;
 
-public class FunnelQuestion extends QuestionBase {
+public class ConceptMapQuestion extends QuestionBase {
 
 	private EvalObject eval;
 	
-	public FunnelQuestion(EvalObject eval) {
+	public ConceptMapQuestion(EvalObject eval) {
 		this.eval = eval;
+		
+		append("Are the most general concepts at the top of the map?");
+		append("Are lines between concepts, labeled with the nature of the relation?  ");
+		append("Is it clear the question we seek to answer?");
+		append("Are there any specific examples of events or objects that help to clarify the meaning of a given concept?");
+		append("Are the most specific concepts at the bottom of the map?");
+		append("Are different domains of knowledge identifiable in the visualization?");
+		append("Is color use in this visualization? If so, how is it being use?");
 	}
 
 	@Override

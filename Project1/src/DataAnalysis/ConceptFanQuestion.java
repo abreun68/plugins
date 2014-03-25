@@ -9,6 +9,16 @@ public class ConceptFanQuestion extends QuestionBase {
 	
 	public ConceptFanQuestion(EvalObject eval) {
 		this.eval = eval;
+		
+		append("Are these ideas clearly represented by the visualization?");
+		append("Is the problem clearly defined in the visualization?");
+		append("Are the solutions to the problems feasible?");
+		append("Do the labeled lines that radiate from a circle represent denote possible solutions?");
+		append("Do circles to the left of any other circle, represent solutions that are impractical, unremarkable, or do not really solve the problem?");
+		append("Are arrows used from the initial problem definition to a new one, shows the linkage between the problems?");
+		append("Does the visualization leads to a satisfactory solution?");
+		append("Is each circle labelled?");
+		append("Work associated with problem solutions, what’s better? Easier?");
 	}
 
 	@Override

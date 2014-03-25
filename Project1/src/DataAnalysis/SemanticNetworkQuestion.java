@@ -9,6 +9,15 @@ public class SemanticNetworkQuestion extends QuestionBase {
 	
 	public SemanticNetworkQuestion(EvalObject eval) {
 		this.eval = eval;
+		
+		append("What’s at the center of the visualization?");
+		append("How many degrees are at the center visualization?");
+		append("What do the outside networks represent?");
+		append("Is there a relationship with the connecting nodes?");
+		append("Is there a pattern in the clustering of this visualization?");
+		append("Is the visualization too detailed?");
+		append("What's the shortest path length of connecting nodes?");
+		append("What’s the longest path length?");
 	}
 
 	@Override
