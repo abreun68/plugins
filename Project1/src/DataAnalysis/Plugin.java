@@ -17,7 +17,7 @@ import DataObject.Question;
 
 /** 
  * This was originally the "QuestionBase" abstract class, which "plugins" 
- * implementation were suppose to extend. The decision to change it to an 
+ * implementation were supposed to extend. The decision to change it to an 
  * interface is based on the fact that the class didn't implement any behavior,
  * for the subclasses to inherit.
  */
@@ -76,7 +76,7 @@ public interface Plugin
      * This method is use to modify any of the exploration, or specific,
      * question related to this plugin. 
      * @param question The new question
-     * @param index Position in the data structure of the plugin, that will be 
+     * @param index Position in the data structure of the plugin that will be 
      * modified.
      * @param answer
      * @return the inputed string question.

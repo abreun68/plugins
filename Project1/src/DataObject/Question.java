@@ -3,7 +3,8 @@
 package DataObject;
 
 /**
- * 
+ * This interface is used to abstract the actual implementation of an evaluation
+ * answer. 
  * @author Nacer Abreu
  */
 public interface Question {

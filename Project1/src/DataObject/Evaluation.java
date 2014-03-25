@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * 
+ * This interface is used to abstract the actual implementation of an evaluation. 
  * @author Nacer Abreu
  */
 public interface Evaluation {
