@@ -4,6 +4,8 @@ package DataAnalysis;
 import DataObject.Evaluation;
 import DataObject.Question;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 /**
  *  Parallel Coordinates Plugin implementation
@@ -22,6 +24,11 @@ public class ParallelCoordinatesPlugin implements Plugin {
         append("Was there an event that caused this?");
         append("Does the number of entries make the visualization harder to interpret?");
         append("Does the number of columns make the visualization harder to interpret?");
+        
+        // Ramdomized...humm..why not?! 
+        long seed = System.nanoTime();
+        Collections.shuffle(this.questions, new Random(seed));
+        
     }
 
     @Override

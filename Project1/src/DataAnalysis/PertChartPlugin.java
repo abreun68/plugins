@@ -4,6 +4,8 @@ package DataAnalysis;
 import DataObject.Evaluation;
 import DataObject.Question;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 /**
  * Pert Chart Plugin implementation
@@ -26,6 +28,10 @@ public class PertChartPlugin implements Plugin {
 	append("Who performed the task faster or more efficiently?");
         append("Did each task, or sub-task, defined a completion (duration" + 
                 ") time?");
+        
+        // Ramdomized...humm..why not?! 
+        long seed = System.nanoTime();
+        Collections.shuffle(this.questions, new Random(seed));
     }
 
     @Override

@@ -4,6 +4,8 @@ package DataAnalysis;
 import DataObject.Evaluation;
 import DataObject.Question;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 /**
  * Tree Map Plugin implementation. 
@@ -31,7 +33,10 @@ public class TreeMapPlugin implements Plugin {
         append("Is one item in a group drastically different in size or color? Why?");
         append("Can you draw any conclusions from the tree map? If so, explain");
         
-
+        // Ramdomized...humm..why not?! 
+        long seed = System.nanoTime();
+        Collections.shuffle(this.questions, new Random(seed));
+        
     }
 
     @Override
