@@ -38,7 +38,7 @@ public class ParallelCoordinatesPlugin implements Plugin {
             }            
         }       
         //create a new question object 
-        Question newQuestion = eval.buildQuestion("What is the maximum value?", 30, "s", 0);
+        Question newQuestion = eval.buildQuestion("What is the maximum Y value?", 30, "s", 0);
         newQuestion.setAnswer(new Double(max).toString());
         return newQuestion;
     }
@@ -57,7 +57,7 @@ public class ParallelCoordinatesPlugin implements Plugin {
             }            
         }       
         //create a new question object 
-        Question newQuestion = eval.buildQuestion("What is the minimum value?", 30, "s", 0);
+        Question newQuestion = eval.buildQuestion("What is the minimum Y value?", 30, "s", 0);
         newQuestion.setAnswer(new Double(min).toString());
         return newQuestion;
     }

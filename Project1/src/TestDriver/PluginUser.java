@@ -39,20 +39,7 @@ public class PluginUser {
         System.out.println("=======================\n");
         Plugin plugin = PluginFactory.getParallelCoordinatesPlugin();
         callExplorationMethod(plugin);
-        
-        Question maxQuestion = plugin.findMax();
-        String question = maxQuestion.getQuestion();
-        
-        if (question != null) {
-            System.out.println("findmax - Question : " + question);        
-        }
-        
-        Question minQuestion = plugin.findMin();
-        question = minQuestion.getQuestion();
-        if (question != null) {
-            System.out.println("findmin - Question : " + question);
-        }
-        
+        callFindMinMaxMethod(plugin);        
         System.out.println("\n=======================\n\n");
     }
     
