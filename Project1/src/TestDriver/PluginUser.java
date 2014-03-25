@@ -22,6 +22,7 @@ public class PluginUser {
         System.out.println("=======================\n");
         Plugin plugin = PluginFactory.getPertChartPlugin();
         callExplorationMethod(plugin);
+        System.out.println("\n=======================\n\n");
     }
 
     public static void dataMapTest() {
@@ -29,6 +30,8 @@ public class PluginUser {
         System.out.println("=======================\n");
         Plugin plugin = PluginFactory.getDataMapPlugin();
         callExplorationMethod(plugin);
+        callFindMinMaxMethod(plugin);
+        System.out.println("\n=======================\n\n");
     }
     
     public static void parallelCoordinatesTest() {
@@ -64,8 +67,27 @@ public class PluginUser {
             System.out.println(x + " - Question : " + question);
         }
 
-        System.out.println("\n=======================\n\n");
+        
     }
     
+        /**
+     * This method simulates calling the Plugin::findMin() and Plugin::findMax()
+     * method
+     */
+    private static void callFindMinMaxMethod(Plugin plugin) {
+        
+            Question question = plugin.findMin();
+            
+            if (question != null){
+              System.out.println("Question : " + question.getQuestion() + "; Answer: " + question.getAnswer());  
+            }
+            
+            question = plugin.findMax();
+            
+            if (question != null){
+              System.out.println("Question : " + question.getQuestion() + "; Answer: " + question.getAnswer());  
+            }
+        
+    }
 
 }

@@ -69,9 +69,9 @@ public class PluginFactory {
         }
         
         // Add Datapoints
-        for (int i = 0; i < 100; i++) {
+        for (int i = 20; i < 100; i++) {
             evalObject.addDatapoint(new Datapoint("label", "group", "valueX",
-                    i, 30, 3));
+                    i, i, 3));
         }  
         
         // Create Plugin

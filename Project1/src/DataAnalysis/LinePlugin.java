@@ -52,7 +52,7 @@ public class LinePlugin implements Plugin
     {
         double min = eval.getDatapoints().get(0).getValueY();
         
-        //itterate through all of the datapoints find the min
+        //iterate through all of the datapoints find the min
         for(int i =1; i < eval.getDatapoints().size(); i++)
         {
         
