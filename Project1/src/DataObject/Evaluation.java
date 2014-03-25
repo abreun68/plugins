@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- *
+ * 
  * @author Nacer Abreu
  */
 public interface Evaluation {
@@ -36,7 +36,7 @@ public interface Evaluation {
     /**
      * returns the entire Datapoints ArrayList
      *
-     * @returns datapoints
+     * @return  datapoints
      */    
     ArrayList<Datapoint> getDatapoints();
 
