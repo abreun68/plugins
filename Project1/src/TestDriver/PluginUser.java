@@ -22,6 +22,7 @@ public class PluginUser {
         System.out.println("=======================\n");
         Plugin plugin = PluginFactory.getPertChartPlugin();
         callExplorationMethod(plugin);
+        callFindMinMaxMethod(plugin);
         System.out.println("\n=======================\n\n");
     }
 
