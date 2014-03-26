@@ -18,14 +18,13 @@ public class PertChartQuestion extends QuestionBase {
     public PertChartQuestion(EvalObject eval) {
         this.eval = eval;
         
-        append("Did the tasks, in this visualization, follow a logical order?");
-    	append("Were the sub-tasks clearly labeled?");  
-    	append("Was the visualization too detailed?"); 
-    	append("Was the critical path easy to follow?"); 
-    	append("Was the visualization conducive to decision making?"); 
-    	append("Who performed the task faster or more efficiently?");
-    	append("Did each task, or sub-task, defined a completion (duration" + 
-                    ") time?");
+        append("Did the tasks, in this visualization, follow a logical order?", 30, "s");
+    	append("Were the sub-tasks clearly labeled?", 30, "s");  
+    	append("Was the visualization too detailed?", 30, "s"); 
+    	append("Was the critical path easy to follow?", 30, "s"); 
+    	append("Was the visualization conducive to decision making?", 30, "s"); 
+    	append("Who performed the task faster or more efficiently?", 30, "s");
+    	append("Did each task, or sub-task, defined a completion (duration" + ") time?", 30, "s");
     }
 
     @Override
@@ -70,13 +69,16 @@ public class PertChartQuestion extends QuestionBase {
      * 2. The type of answer is always a string. 
      * 3. The question is always rated as 0 (zero)
      */
-    private void append(String question) {
-        int time = 30;
+	/**
+     * This method will append to the list of "canned" questions, the ones
+     * particular to this plugin. 
+     */
+    private void append(String question, int time, String type) {
         int score = 0;
-        String type = "s";
         Question obj = new Question(question, time, type, score);
-        this.eval.addQuestion(obj);
+        eval.addQuestion(obj);
 
-    } 
+    }   
+
     
 }

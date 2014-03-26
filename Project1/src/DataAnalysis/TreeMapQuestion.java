@@ -12,17 +12,17 @@ public class TreeMapQuestion extends QuestionBase {
 		
 		this.eval = eval;
 		
-		append("Did the colors effectively show patterns that would otherwise not be seen?");
-		append("Is there some sense of order in the input data?");
-		append("Was the hierarchy easily recognizable?");
-		append("Can you easily compare various nodes?");
-		append("Are the borders clearly defined?");
-		append("Is the visualization showing too much information?");
-		append("Are you able to quickly see patterns?");
-		append("Do certain nodes (rectangles) stand out?");
-		append("Do items in one group have similar or divergent colors?");
-		append("Is one item in a group drastically different in size or color? Why?");
-		append("Can you draw any conclusions from the tree map? If so, explain");
+		append("Did the colors effectively show patterns that would otherwise not be seen?", 30, "s");
+		append("Is there some sense of order in the input data?", 30, "s");
+		append("Was the hierarchy easily recognizable?", 30, "s");
+		append("Can you easily compare various nodes?", 30, "s");
+		append("Are the borders clearly defined?", 30, "s");
+		append("Is the visualization showing too much information?", 30, "s");
+		append("Are you able to quickly see patterns?", 30, "s");
+		append("Do certain nodes (rectangles) stand out?", 30, "s");
+		append("Do items in one group have similar or divergent colors?", 30, "s");
+		append("Is one item in a group drastically different in size or color? Why?", 30, "s");
+		append("Can you draw any conclusions from the tree map? If so, explain", 30, "s");
 	}
 
 	@Override
@@ -63,18 +63,14 @@ public class TreeMapQuestion extends QuestionBase {
 	
 	/**
      * This method will append to the list of "canned" questions, the ones
-     * particular to this plugin. This method makes the following assumptions:
-     * 1. The time suggested length of question is 30 seconds 
-     * 2. The type of answer is always a string. 
-     * 3. The question is always rated as 0 (zero)
+     * particular to this plugin. 
      */
-    private void append(String question) {
-        int time = 30;
+    private void append(String question, int time, String type) {
         int score = 0;
-        String type = "s";
         Question obj = new Question(question, time, type, score);
-        this.eval.addQuestion(obj);
+        eval.addQuestion(obj);
 
-    }    
+    }   
+   
 
 }

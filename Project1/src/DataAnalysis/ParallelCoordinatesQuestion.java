@@ -10,10 +10,10 @@ public class ParallelCoordinatesQuestion extends QuestionBase {
 	public ParallelCoordinatesQuestion(EvalObject eval) {
 		this.eval = eval;
 		
-		append("Is there a pattern to the visualization?");
-        append("Was there an event that caused this?");
-        append("Does the number of entries make the visualization harder to interpret?");
-        append("Does the number of columns make the visualization harder to interpret?");
+		append("Is there a pattern to the visualization?", 30, "s");
+        append("Was there an event that caused this?", 30, "s");
+        append("Does the number of entries make the visualization harder to interpret?", 30, "s");
+        append("Does the number of columns make the visualization harder to interpret?", 30, "s");
 	}
 
 	@Override
@@ -80,18 +80,14 @@ public class ParallelCoordinatesQuestion extends QuestionBase {
 	
 	/**
      * This method will append to the list of "canned" questions, the ones
-     * particular to this plugin. This method makes the following assumptions:
-     * 1. The time suggested length of question is 30 seconds 
-     * 2. The type of answer is always a string. 
-     * 3. The question is always rated as 0 (zero)
+     * particular to this plugin. 
      */
-    private void append(String question) {
-        int time = 30;
+    private void append(String question, int time, String type) {
         int score = 0;
-        String type = "s";
         Question obj = new Question(question, time, type, score);
-        this.eval.addQuestion(obj);
+        eval.addQuestion(obj);
 
-    }
+    }   
+
 
 }

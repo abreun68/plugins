@@ -20,16 +20,16 @@ public class DataMapQuestion extends QuestionBase {
 	public DataMapQuestion(EvalObject eval) {
 		this.eval = eval;
 		
-		append("Is there a concentration in a certain location? Why?"); 
-		append("Are there any inconclusive data areas?"); 
-		append("Does the color scale contain patterns or textures to differentiate similar shades?"); 
-		append("Can the under-represented areas be easily identified?");
-		append("Can the over-represented areas be easily identified?");
-		append("Are the boundaries clearly delineated?");
-		append("Is context provided?");
-		append("Are the colors used, readable for colorblind users?");
-		append("Can you draw any conclusions from the data map?");
-		append("Are the colors used representatives of the data in any way?");
+		append("Is there a concentration in a certain location? Why?", 30, "s"); 
+		append("Are there any inconclusive data areas?", 30, "s"); 
+		append("Does the color scale contain patterns or textures to differentiate similar shades?", 30, "s"); 
+		append("Can the under-represented areas be easily identified?", 30, "s");
+		append("Can the over-represented areas be easily identified?", 30, "s");
+		append("Are the boundaries clearly delineated?", 30, "s");
+		append("Is context provided?", 30, "s");
+		append("Are the colors used, readable for colorblind users?", 30, "s");
+		append("Can you draw any conclusions from the data map?", 30, "s");
+		append("Are the colors used representatives of the data in any way?", 30, "s");
 	}
 
 	/* (non-Javadoc)
@@ -122,18 +122,14 @@ public class DataMapQuestion extends QuestionBase {
 	
 	/**
      * This method will append to the list of "canned" questions, the ones
-     * particular to this plugin. This method makes the following assumptions:
-     * 1. The time suggested length of question is 30 seconds 
-     * 2. The type of answer is always a string. 
-     * 3. The question is always rated as 0 (zero)
+     * particular to this plugin. 
      */
-    private void append(String question) {
-        int time = 30;
+    private void append(String question, int time, String type) {
         int score = 0;
-        String type = "s";
         Question obj = new Question(question, time, type, score);
-        this.eval.addQuestion(obj);
+        eval.addQuestion(obj);
 
-    } 
+    }   
+
 
 }

@@ -10,15 +10,15 @@ public class ConceptFanQuestion extends QuestionBase {
 	public ConceptFanQuestion(EvalObject eval) {
 		this.eval = eval;
 		
-		append("Are these ideas clearly represented by the visualization?");
-		append("Is the problem clearly defined in the visualization?");
-		append("Are the solutions to the problems feasible?");
-		append("Do the labeled lines that radiate from a circle represent denote possible solutions?");
-		append("Do circles to the left of any other circle, represent solutions that are impractical, unremarkable, or do not really solve the problem?");
-		append("Are arrows used from the initial problem definition to a new one, shows the linkage between the problems?");
-		append("Does the visualization leads to a satisfactory solution?");
-		append("Is each circle labelled?");
-		append("Work associated with problem solutions, what’s better? Easier?");
+		append("Are these ideas clearly represented by the visualization?", 30, "s");
+		append("Is the problem clearly defined in the visualization?", 30, "s");
+		append("Are the solutions to the problems feasible?", 30, "s");
+		append("Do the labeled lines that radiate from a circle represent denote possible solutions?", 30, "s");
+		append("Do circles to the left of any other circle, represent solutions that are impractical, unremarkable, or do not really solve the problem?", 30, "s");
+		append("Are arrows used from the initial problem definition to a new one, shows the linkage between the problems?", 30, "s");
+		append("Does the visualization leads to a satisfactory solution?", 30, "s");
+		append("Is each circle labelled?", 30, "s");
+		append("Work associated with problem solutions, what’s better? Easier?", 30, "s");
 	}
 
 	@Override
@@ -59,18 +59,14 @@ public class ConceptFanQuestion extends QuestionBase {
 	
 	/**
      * This method will append to the list of "canned" questions, the ones
-     * particular to this plugin. This method makes the following assumptions:
-     * 1. The time suggested length of question is 30 seconds 
-     * 2. The type of answer is always a string. 
-     * 3. The question is always rated as 0 (zero)
+     * particular to this plugin. 
      */
-    private void append(String question) {
-        int time = 30;
+    private void append(String question, int time, String type) {
         int score = 0;
-        String type = "s";
         Question obj = new Question(question, time, type, score);
-        this.eval.addQuestion(obj);
+        eval.addQuestion(obj);
 
-    } 
+    }   
+
 
 }
