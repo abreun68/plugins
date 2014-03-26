@@ -10,13 +10,46 @@ public class ConcentricCirclesQuestion extends QuestionBase {
 	public ConcentricCirclesQuestion(EvalObject eval) {
 		this.eval = eval;
 		
-		append("What’s the total population of users?", 30, "s");					//TODO set answer
-		append("What percentage is each section of total population?", 30, "s");	//TODO set answer
-		append("What does the center of the circle represent?", 30, "s");
-		append("What does the outer ring of the circle represent?", 30, "s");
-		append("Does the number of rings have an impact on the visualization? ", 30, "s");
-		append("Are the colors aiding in the understanding of the visualization?", 30, "s");
-		append("Does the location of the center circles have an effect on the visualization?", 30, "s");
+		this.eval.addQuestion(findTotal());
+		this.eval.addQuestion(findPercentage());
+		
+		append("What does the center of the circle represent?", 60, "s");
+		append("What does the outer ring of the circle represent?", 60, "s");
+		append("Does the number of rings have an impact on the visualization? ", 60, "s");
+		append("Are the colors aiding in the understanding of the visualization?", 60, "s");
+		append("Does the location of the center circles have an effect on the visualization?", 60, "s");
+	}
+	
+	Question findTotal() {
+		double total = eval.getDatapoints().get(0).getEdges();
+
+
+		//itterate through all of the datapoints find the total population
+		for(int i =1; i < eval.getDatapoints().size(); i++)
+		{
+			total += eval.getDatapoints().get(i).getEdges();
+		}
+		
+		//create a new question object 
+		Question newQuestion = new Question("What’s the total population of users?", 60, "s", 0);
+		newQuestion.setAnswer(new Double(total).toString());
+		return newQuestion;
+	}
+	
+	Question findPercentage() {
+		double percent = eval.getDatapoints().get(0).getPercent();
+
+		String answer = "[" + new Double(percent).toString();
+		//itterate through all of the datapoints find the percent of each section
+		for(int i =1; i < eval.getDatapoints().size(); i++)
+		{
+			answer += "," + eval.getDatapoints().get(i).getPercent();
+		}
+		answer = answer + "]";
+		//create a new question object 
+		Question newQuestion = new Question("What percentage is each section of total population?", 60, "s", 0);
+		newQuestion.setAnswer(answer);
+		return newQuestion;
 	}
 
 	@Override
