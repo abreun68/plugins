@@ -3,6 +3,16 @@ package DataAnalysis;
 import DataObject.EvalObject;
 import DataObject.Question;
 
+/**
+ * Tree Map Plugin implementation. 
+ * Treemap is a space-constrained visualization of hierarchical structures. 
+ * It is very effective in showing attributes of leaf nodes using size and color
+ * coding. Treemap enables users to compare nodes and sub-trees even at varying 
+ * depth in the tree, and help them spot patterns and exceptions. Treemap was 
+ * first designed by Ben Shneiderman during the 1990s.
+ * 
+ * @author Nacer Abreu
+ */
 public class TreeMapQuestion extends QuestionBase {
 
 
@@ -61,9 +71,10 @@ public class TreeMapQuestion extends QuestionBase {
 		return null;
 	}
 	
-	/**
+    /**
      * This method will append to the list of "canned" questions, the ones
-     * particular to this plugin. 
+     * particular to this plugin. This method makes the following assumption(s):
+     * 1. The question is always rated as 0 (zero)
      */
     private void append(String question, int time, String type) {
         int score = 0;
