@@ -11,8 +11,6 @@ public class TimelineQuestion extends QuestionBase {
 		this.eval = eval;
 		
 		append("Who had more events in a timeframe?", 30, "s");
-		append("Who had longer timeline?", 30, "s");
-		append("Who had shorter timeline?", 30, "s");
 		append("Is the idea of chronological sequence present in the visualization?", 30, "s");
 		append("Is the timeline divided into segments?", 30, "s");
 		append("Does the timeline visualization label the units of time used?", 30, "s");
@@ -22,13 +20,13 @@ public class TimelineQuestion extends QuestionBase {
 
 	@Override
 	Question finMax() {
-		// TODO Auto-generated method stub
+		append("Who had longer timeline?", 30, "s");
 		return null;
 	}
 
 	@Override
 	Question findMin() {
-		// TODO Auto-generated method stub
+		append("Who had shorter timeline?", 30, "s");
 		return null;
 	}
 
