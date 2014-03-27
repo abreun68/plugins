@@ -7,8 +7,15 @@ import DataObject.EvalObject;
 import DataObject.Question;
 
 /**
- * @author MIKE
  *
+ * Data Map Plugin implementation.
+ * Choropleth maps are one of the most frequently used maps in infographic style
+ * visualizations. As the name suggests, color is the important part to these 
+ * maps. A color scale is assigned to categorical or numerical data, and the 
+ * value for each region is used to color the region. These maps usually use 
+ * political boundaries as the regions.
+ * 
+ * @author Nacer Abreu
  */
 public class DataMapQuestion extends QuestionBase {
 
@@ -120,9 +127,10 @@ public class DataMapQuestion extends QuestionBase {
 		return null;
 	}
 	
-	/**
+    /**
      * This method will append to the list of "canned" questions, the ones
-     * particular to this plugin. 
+     * particular to this plugin. This method makes the following assumption(s):
+     * 1. The question is always rated as 0 (zero)
      */
     private void append(String question, int time, String type) {
         int score = 0;
