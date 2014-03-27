@@ -92,4 +92,12 @@ public interface Plugin
      * @return the total number of questions in a plugin.
      */
     public int size();
+    
+    
+     /**     
+     * This method is used to call the initialize process of the plugin. 
+     * 
+     */
+    public boolean init();
+    
 }

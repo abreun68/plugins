@@ -20,23 +20,13 @@ public class TreeMapPlugin implements Plugin {
         this.eval = eval;
         this.questions = eval.getQuestions();
         this.index = 0;
-        
-	append("Did the colors effectively show patterns that would otherwise not be seen?");
-	append("Is there some sense of order in the input data?");
-        append("Was the hierarchy easily recognizable?");
-        append("Can you easily compare various nodes?");
-        append("Are the borders clearly defined?");
-        append("Is the visualization showing too much information?");
-        append("Are you able to quickly see patterns?");
-        append("Do certain nodes (rectangles) stand out?");
-        append("Do items in one group have similar or divergent colors?");
-        append("Is one item in a group drastically different in size or color? Why?");
-        append("Can you draw any conclusions from the tree map? If so, explain");
-        
-        // Ramdomized...humm..why not?! 
-        long seed = System.nanoTime();
-        Collections.shuffle(this.questions, new Random(seed));
-        
+        this.initialized = false;
+
+        // Calling init() from the constructor is a temporary fix.
+        // Ideally the plugin-user should call this routine whenever
+        // it is ready to to use the plugin. Instead, of being done
+        // automatically in the constructor.
+        init();        
     }
 
     @Override
@@ -89,6 +79,30 @@ public class TreeMapPlugin implements Plugin {
     public int size() {
         return questions.size();
     }
+
+    @Override
+    public boolean init() {
+        boolean accomplished = false;
+        if(!initialized){
+        append("Did the colors effectively show patterns that would otherwise not be seen?", 60, "s");
+        append("Is there some sense of order in the input data?", 30, "s");
+        append("Was the hierarchy easily recognizable?", 60, "s");
+        append("Can you easily compare various nodes?", 120, "s");
+        append("Are the borders clearly defined?", 120, "s");
+        append("Is the visualization showing too much information?", 30, "s");
+        append("Are you able to quickly see patterns?", 30, "s");
+        append("Do certain nodes (rectangles) stand out?", 30, "s");
+        append("Do items in one group have similar or divergent colors?", 30, "s");
+        append("Is one item in a group drastically different in size or color? Why?", 30, "s");
+        append("Can you draw any conclusions from the tree map? If so, explain", 30, "s");
+
+        // Ramdomized...humm..why not?! 
+        long seed = System.nanoTime();
+        Collections.shuffle(this.questions, new Random(seed));
+        initialized = true;
+        }
+        return accomplished;
+    }//end of init();  
     
     /**
      * This method will append to the list of "canned" questions, the ones
@@ -97,19 +111,15 @@ public class TreeMapPlugin implements Plugin {
      * 2. The type of answer is always a string. 
      * 3. The question is always rated as 0 (zero)
      */
-    private void append(String question) {
-        int time = 30;
+    private void append(String question, int time, String type) {
         int score = 0;
-        String type = "s";
         Question obj = eval.buildQuestion(question, time, type, score);
         questions.add(obj);
-
     }    
     private Evaluation eval;
     private ArrayList<Question> questions;
+    private int index; /** Current Question index */
+    private boolean initialized;
 
-    /**
-     * Current Question index
-     */
-    private int index;
+
 }

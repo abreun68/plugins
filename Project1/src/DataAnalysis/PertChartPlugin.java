@@ -19,19 +19,13 @@ public class PertChartPlugin implements Plugin {
         this.eval = eval;
         this.questions = eval.getQuestions();
         this.index = 0;
+        this.initialized = false;
         
-        append("Did the tasks, in this visualization, follow a logical order?");
-	append("Were the sub-tasks clearly labeled?");  
-	append("Was the visualization too detailed?"); 
-	append("Was the critical path easy to follow?"); 
-	append("Was the visualization conducive to decision making?"); 
-	append("Who performed the task faster or more efficiently?");
-        append("Did each task, or sub-task, defined a completion (duration" + 
-                ") time?");
-        
-        // Ramdomized...humm..why not?! 
-        long seed = System.nanoTime();
-        Collections.shuffle(this.questions, new Random(seed));
+        // Calling init() from the constructor is a temporary fix.
+        // Ideally the plugin-user should call this routine whenever
+        // it is ready to to use the plugin. Instead, of being done
+        // automatically in the constructor.
+        init();
     }
 
     @Override
@@ -86,6 +80,28 @@ public class PertChartPlugin implements Plugin {
     public int size() {
         return questions.size();
     }
+
+    @Override
+    public boolean init() {
+        boolean accomplished = false;
+        if (!initialized) {
+            append("Did the tasks, in this visualization, follow a logical order?", 30, "s");
+            append("Were the sub-tasks clearly labeled?", 30, "s");
+            append("Was the visualization too detailed?", 30, "s");
+            append("Was the critical path easy to follow?", 30, "s");
+            append("Was the visualization conducive to decision making?", 30, "s");
+            append("Who performed the task faster or more efficiently?", 30, "s");
+            append("Did each task, or sub-task, defined a completion (duration"
+                    + ") time?", 30, "s");
+
+            // Ramdomized...humm..why not?! 
+            long seed = System.nanoTime();
+            Collections.shuffle(this.questions, new Random(seed));
+            initialized = true;
+            accomplished = true;
+        }
+        return accomplished;
+    }
     
     /**
      * This method will append to the list of "canned" questions, the ones
@@ -94,10 +110,10 @@ public class PertChartPlugin implements Plugin {
      * 2. The type of answer is always a string. 
      * 3. The question is always rated as 0 (zero)
      */
-    private void append(String question) {
-        int time = 30;
+    private void append(String question, int time, String type) {
+        //int time = 30;
         int score = 0;
-        String type = "s";
+        //String type = "s";
         Question obj = eval.buildQuestion(question, time, type, score);
         questions.add(obj);
 
@@ -105,9 +121,8 @@ public class PertChartPlugin implements Plugin {
     
     private Evaluation eval;
     private ArrayList<Question> questions;
+    private int index; /** Current Question index */
+    private boolean initialized;
 
-    /**
-     * Current Question index
-     */
-    private int index;
+
 }

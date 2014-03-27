@@ -175,6 +175,11 @@ public class LinePlugin implements Plugin
     public int size() {
         return 0;
     }
+
+    @Override
+    public boolean init() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
     

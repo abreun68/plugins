@@ -19,15 +19,13 @@ public class ParallelCoordinatesPlugin implements Plugin {
         this.eval = eval;
         this.questions = eval.getQuestions();
         this.index = 0;
+        this.initialized = false;
         
-        append("Is there a pattern to the visualization?");
-        append("Was there an event that caused this?");
-        append("Does the number of entries make the visualization harder to interpret?");
-        append("Does the number of columns make the visualization harder to interpret?");
-        
-        // Ramdomized...humm..why not?! 
-        long seed = System.nanoTime();
-        Collections.shuffle(this.questions, new Random(seed));
+        // Calling init() from the constructor is a temporary fix.
+        // Ideally the plugin-user should call this routine whenever
+        // it is ready to to use the plugin. Instead, of being done
+        // automatically in the constructor.
+        init();
         
     }
 
@@ -107,7 +105,25 @@ public class ParallelCoordinatesPlugin implements Plugin {
     public int size() {
         return questions.size();
     }
+    
+    @Override
+    public boolean init() {
+        boolean accomplished = false;
+        if (!initialized) {
+            append("Is there a pattern to the visualization?", 60, "s");
+            append("Was there an event that caused this?", 30, "s");
+            append("Does the number of entries make the visualization harder to interpret?", 120, "s");
+            append("Does the number of columns make the visualization harder to interpret?", 30, "s");
 
+            // Ramdomized...humm..why not?! 
+            long seed = System.nanoTime();
+            Collections.shuffle(this.questions, new Random(seed));
+            initialized = true;
+            accomplished = true;
+        }
+        return accomplished;
+    }//end of init()
+    
     /**
      * This method will append to the list of "canned" questions, the ones
      * particular to this plugin. This method makes the following assumptions:
@@ -115,20 +131,15 @@ public class ParallelCoordinatesPlugin implements Plugin {
      * 2. The type of answer is always a string. 
      * 3. The question is always rated as 0 (zero)
      */
-    private void append(String question) {
-        int time = 30;
+    private void append(String question, int time, String type) {
         int score = 0;
-        String type = "s";
         Question obj = eval.buildQuestion(question, time, type, score);
         questions.add(obj);
 
-    }
+    }//end of append()
     
     private Evaluation eval;
     private ArrayList<Question> questions;
-
-    /**
-     * Current Question index
-     */
-    private int index;
+    private int index; /** Current Question index */ 
+    private boolean initialized;
 }
