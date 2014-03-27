@@ -10,10 +10,10 @@ public class ParallelCoordinatesQuestion extends QuestionBase {
 	public ParallelCoordinatesQuestion(EvalObject eval) {
 		this.eval = eval;
 		
-		append("Is there a pattern to the visualization?", 30, "s");
-        append("Was there an event that caused this?", 30, "s");
-        append("Does the number of entries make the visualization harder to interpret?", 30, "s");
-        append("Does the number of columns make the visualization harder to interpret?", 30, "s");
+		append("Is there a pattern to the visualization?", 60, "s");
+        append("Was there an event that caused this?", 60, "s");
+        append("Does the number of entries make the visualization harder to interpret?", 60, "s");
+        append("Does the number of columns make the visualization harder to interpret?", 60, "s");
 	}
 
 	@Override

@@ -10,17 +10,17 @@ public class TimelineQuestion extends QuestionBase {
 	public TimelineQuestion(EvalObject eval) {
 		this.eval = eval;
 		
-		append("Who had more events in a timeframe?", 30, "s");
-		append("Is the idea of chronological sequence present in the visualization?", 30, "s");
-		append("Is the timeline divided into segments?", 30, "s");
-		append("Does the timeline visualization label the units of time used?", 30, "s");
-		append("Does the visualization contain multiple timelines?", 30, "s");
-		append("Are events stacked? If so, does it look cluttered?", 30, "s");
+		append("Who had more events in a timeframe?", 60, "s");
+		append("Is the idea of chronological sequence present in the visualization?", 60, "s");
+		append("Is the timeline divided into segments?", 60, "s");
+		append("Does the timeline visualization label the units of time used?", 60, "s");
+		append("Does the visualization contain multiple timelines?", 60, "s");
+		append("Are events stacked? If so, does it look cluttered?", 60, "s");
 	}
 
 	@Override
 	public Question finMax() {
-		Question newQuestion = new Question( "Who has the longest timeline?", 30, "s", 0);
+		Question newQuestion = new Question( "Who has the longest timeline?", 60, "s", 0);
 		double max           = eval.getDatapoints().get(0).getValueY();
 		double temp_max      = 0.0;
 		int size             = eval.getDatapoints().size();
@@ -41,7 +41,7 @@ public class TimelineQuestion extends QuestionBase {
 
 	@Override
 	public Question findMin() {
-		Question newQuestion = new Question("Who has the shortest timeline?", 30, "s", 0);
+		Question newQuestion = new Question("Who has the shortest timeline?", 60, "s", 0);
 		double min           = eval.getDatapoints().get(0).getValueY();
 		double temp_min      = 0.0;
 		int size             = eval.getDatapoints().size();

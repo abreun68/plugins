@@ -10,13 +10,13 @@ public class ConceptMapQuestion extends QuestionBase {
 	public ConceptMapQuestion(EvalObject eval) {
 		this.eval = eval;
 		
-		append("Are the most general concepts at the top of the map?", 30, "s");
-		append("Are lines between concepts, labeled with the nature of the relation?  ", 30, "s");
-		append("Is it clear the question we seek to answer?", 30, "s");
-		append("Are there any specific examples of events or objects that help to clarify the meaning of a given concept?", 30, "s");
-		append("Are the most specific concepts at the bottom of the map?", 30, "s");
-		append("Are different domains of knowledge identifiable in the visualization?", 30, "s");
-		append("Is color use in this visualization? If so, how is it being use?", 30, "s");
+		append("Are the most general concepts at the top of the map?", 60, "s");
+		append("Are lines between concepts, labeled with the nature of the relation?  ", 60, "s");
+		append("Is it clear the question we seek to answer?", 60, "s");
+		append("Are there any specific examples of events or objects that help to clarify the meaning of a given concept?", 60, "s");
+		append("Are the most specific concepts at the bottom of the map?", 60, "s");
+		append("Are different domains of knowledge identifiable in the visualization?", 60, "s");
+		append("Is color use in this visualization? If so, how is it being use?", 60, "s");
 	}
 
 	@Override

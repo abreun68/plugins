@@ -12,17 +12,17 @@ public class TreeMapQuestion extends QuestionBase {
 		
 		this.eval = eval;
 		
-		append("Did the colors effectively show patterns that would otherwise not be seen?", 30, "s");
-		append("Is there some sense of order in the input data?", 30, "s");
-		append("Was the hierarchy easily recognizable?", 30, "s");
-		append("Can you easily compare various nodes?", 30, "s");
-		append("Are the borders clearly defined?", 30, "s");
-		append("Is the visualization showing too much information?", 30, "s");
-		append("Are you able to quickly see patterns?", 30, "s");
-		append("Do certain nodes (rectangles) stand out?", 30, "s");
-		append("Do items in one group have similar or divergent colors?", 30, "s");
-		append("Is one item in a group drastically different in size or color? Why?", 30, "s");
-		append("Can you draw any conclusions from the tree map? If so, explain", 30, "s");
+		append("Did the colors effectively show patterns that would otherwise not be seen?", 60, "s");
+		append("Is there some sense of order in the input data?", 60, "s");
+		append("Was the hierarchy easily recognizable?", 60, "s");
+		append("Can you easily compare various nodes?", 60, "s");
+		append("Are the borders clearly defined?", 60, "s");
+		append("Is the visualization showing too much information?", 60, "s");
+		append("Are you able to quickly see patterns?", 60, "s");
+		append("Do certain nodes (rectangles) stand out?", 60, "s");
+		append("Do items in one group have similar or divergent colors?", 60, "s");
+		append("Is one item in a group drastically different in size or color? Why?", 60, "s");
+		append("Can you draw any conclusions from the tree map? If so, explain", 60, "s");
 	}
 
 	@Override

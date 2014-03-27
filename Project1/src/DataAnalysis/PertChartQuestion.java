@@ -18,13 +18,13 @@ public class PertChartQuestion extends QuestionBase {
     public PertChartQuestion(EvalObject eval) {
         this.eval = eval;
         
-        append("Did the tasks, in this visualization, follow a logical order?", 30, "s");
-    	append("Were the sub-tasks clearly labeled?", 30, "s");  
-    	append("Was the visualization too detailed?", 30, "s"); 
-    	append("Was the critical path easy to follow?", 30, "s"); 
-    	append("Was the visualization conducive to decision making?", 30, "s"); 
-    	append("Who performed the task faster or more efficiently?", 30, "s");
-    	append("Did each task, or sub-task, defined a completion (duration" + ") time?", 30, "s");
+        append("Did the tasks, in this visualization, follow a logical order?", 60, "s");
+    	append("Were the sub-tasks clearly labeled?", 60, "s");  
+    	append("Was the visualization too detailed?", 60, "s"); 
+    	append("Was the critical path easy to follow?", 60, "s"); 
+    	append("Was the visualization conducive to decision making?", 60, "s"); 
+    	append("Who performed the task faster or more efficiently?", 60, "s");
+    	append("Did each task, or sub-task, defined a completion (duration" + ") time?", 60, "s");
     }
 
     @Override

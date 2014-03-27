@@ -10,15 +10,15 @@ public class ConceptFanQuestion extends QuestionBase {
 	public ConceptFanQuestion(EvalObject eval) {
 		this.eval = eval;
 		
-		append("Are these ideas clearly represented by the visualization?", 30, "s");
-		append("Is the problem clearly defined in the visualization?", 30, "s");
-		append("Are the solutions to the problems feasible?", 30, "s");
-		append("Do the labeled lines that radiate from a circle represent denote possible solutions?", 30, "s");
-		append("Do circles to the left of any other circle, represent solutions that are impractical, unremarkable, or do not really solve the problem?", 30, "s");
-		append("Are arrows used from the initial problem definition to a new one, shows the linkage between the problems?", 30, "s");
-		append("Does the visualization leads to a satisfactory solution?", 30, "s");
-		append("Is each circle labelled?", 30, "s");
-		append("Work associated with problem solutions, what’s better? Easier?", 30, "s");
+		append("Are these ideas clearly represented by the visualization?", 60, "s");
+		append("Is the problem clearly defined in the visualization?", 60, "s");
+		append("Are the solutions to the problems feasible?", 60, "s");
+		append("Do the labeled lines that radiate from a circle represent denote possible solutions?", 60, "s");
+		append("Do circles to the left of any other circle, represent solutions that are impractical, unremarkable, or do not really solve the problem?", 60, "s");
+		append("Are arrows used from the initial problem definition to a new one, shows the linkage between the problems?", 60, "s");
+		append("Does the visualization leads to a satisfactory solution?", 60, "s");
+		append("Is each circle labelled?", 60, "s");
+		append("Work associated with problem solutions, what’s better? Easier?", 60, "s");
 	}
 
 	@Override

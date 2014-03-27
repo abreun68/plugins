@@ -20,16 +20,16 @@ public class DataMapQuestion extends QuestionBase {
 	public DataMapQuestion(EvalObject eval) {
 		this.eval = eval;
 		
-		append("Is there a concentration in a certain location? Why?", 30, "s"); 
-		append("Are there any inconclusive data areas?", 30, "s"); 
-		append("Does the color scale contain patterns or textures to differentiate similar shades?", 30, "s"); 
-		append("Can the under-represented areas be easily identified?", 30, "s");
-		append("Can the over-represented areas be easily identified?", 30, "s");
-		append("Are the boundaries clearly delineated?", 30, "s");
-		append("Is context provided?", 30, "s");
-		append("Are the colors used, readable for colorblind users?", 30, "s");
-		append("Can you draw any conclusions from the data map?", 30, "s");
-		append("Are the colors used representatives of the data in any way?", 30, "s");
+		append("Is there a concentration in a certain location? Why?", 60, "s"); 
+		append("Are there any inconclusive data areas?", 60, "s"); 
+		append("Does the color scale contain patterns or textures to differentiate similar shades?", 60, "s"); 
+		append("Can the under-represented areas be easily identified?", 60, "s");
+		append("Can the over-represented areas be easily identified?", 60, "s");
+		append("Are the boundaries clearly delineated?", 60, "s");
+		append("Is context provided?", 60, "s");
+		append("Are the colors used, readable for colorblind users?", 60, "s");
+		append("Can you draw any conclusions from the data map?", 60, "s");
+		append("Are the colors used representatives of the data in any way?", 60, "s");
 	}
 
 	/* (non-Javadoc)

@@ -10,13 +10,13 @@ public class MindMapQuestion extends QuestionBase {
 	public MindMapQuestion(EvalObject eval) {
 		this.eval = eval;
 		
-		append("Is the primary idea clearly defined at the center?", 30, "s");
-		append("Is color being use to encode or group ideas?", 30, "s");
-		append("Is line thickness being use to denote hierarchy (an outline) from the center out to the edge branches?", 30, "s");
-		append("Does the visualization uses images, symbols and codes?", 30, "s");
-		append("Do all lines connect back to the center?", 30, "s");
-		append("Are branching easy to follow?", 30, "s");
-		append("Does this visualization represent a case of digging to the root causes of a problem? Or, does it represent a summary of some information?", 30, "s");
+		append("Is the primary idea clearly defined at the center?", 60, "s");
+		append("Is color being use to encode or group ideas?", 60, "s");
+		append("Is line thickness being use to denote hierarchy (an outline) from the center out to the edge branches?", 60, "s");
+		append("Does the visualization uses images, symbols and codes?", 60, "s");
+		append("Do all lines connect back to the center?", 60, "s");
+		append("Are branching easy to follow?", 60, "s");
+		append("Does this visualization represent a case of digging to the root causes of a problem? Or, does it represent a summary of some information?", 60, "s");
 	}
 
 	@Override
