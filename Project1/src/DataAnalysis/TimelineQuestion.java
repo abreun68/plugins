@@ -20,14 +20,44 @@ public class TimelineQuestion extends QuestionBase {
 
 	@Override
 	Question finMax() {
-		append("Who had longer timeline?", 30, "s");
-		return null;
+		Question newQuestion = new Question( "Who has the longest timeline?", 30, "s", 0);
+		double max           = eval.getDatapoints().get(0).getValueY();
+		double temp_max      = 0.0;
+		int size             = eval.getDatapoints().size();
+		
+		for( int i = 1; i < size; i++ )
+		{
+			temp_max = eval.getDatapoints().get(i).getValueY();
+			
+			if( temp_max > max )
+			{
+				max = temp_max;
+			}
+		}
+		
+		newQuestion.setAnswer(new Double(max).toString());
+		return newQuestion;
 	}
 
 	@Override
 	Question findMin() {
-		append("Who had shorter timeline?", 30, "s");
-		return null;
+		Question newQuestion = new Question("Who has the shortest timeline?", 30, "s", 0);
+		double min           = eval.getDatapoints().get(0).getValueY();
+		double temp_min      = 0.0;
+		int size             = eval.getDatapoints().size();
+		
+		for( int i = 1; i < size; i++ )
+		{
+			temp_min = eval.getDatapoints().get(i).getValueY();
+			
+			if( temp_min < min )
+			{
+				min = temp_min;
+			}
+		}
+		
+		newQuestion.setAnswer(new Double(min).toString());
+		return newQuestion;
 	}
 
 	@Override
