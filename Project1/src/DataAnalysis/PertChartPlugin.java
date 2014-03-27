@@ -8,7 +8,12 @@ import java.util.Collections;
 import java.util.Random;
 
 /**
- * Pert Chart Plugin implementation
+ * Pert Chart Plugin implementation.
+ * The Program (or Project) Evaluation and Review Technique, commonly 
+ * abbreviated PERT, is a statistical tool, used in project management, that is 
+ * designed to analyze and represent the tasks involved in completing a given 
+ * project. First developed by the United States Navy in the 1950s, it is 
+ * commonly used in conjunction with the critical path method (CPM).
  *
  * @author Nacer Abreu
  */
@@ -70,9 +75,6 @@ public class PertChartPlugin implements Plugin {
             questions.get(index).setQuestion(question);
             questions.get(index).setAnswer(answer);
         }
-        // Doug Question : Returning the string passed. Not sure why. we are 
-        // Doug Question : mimicking here, what we saw in one of the examples. 
-        // Doug Question : Should it return a boolean instead?
         return question;
     }//end of modifyQuestion
 
@@ -105,19 +107,14 @@ public class PertChartPlugin implements Plugin {
     
     /**
      * This method will append to the list of "canned" questions, the ones
-     * particular to this plugin. This method makes the following assumptions:
-     * 1. The time suggested length of question is 30 seconds 
-     * 2. The type of answer is always a string. 
-     * 3. The question is always rated as 0 (zero)
+     * particular to this plugin. This method makes the following assumption(s):
+     * 1. The question is always rated as 0 (zero)
      */
     private void append(String question, int time, String type) {
-        //int time = 30;
         int score = 0;
-        //String type = "s";
         Question obj = eval.buildQuestion(question, time, type, score);
         questions.add(obj);
-
-    }
+    }//end of append()
     
     private Evaluation eval;
     private ArrayList<Question> questions;

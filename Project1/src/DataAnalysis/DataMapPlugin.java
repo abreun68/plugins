@@ -1,4 +1,3 @@
-
 package DataAnalysis;
 
 import DataObject.Evaluation;
@@ -8,8 +7,13 @@ import java.util.Collections;
 import java.util.Random;
 
 /**
- * Data Map Plugin implementation. 
- *
+ * Data Map Plugin implementation.
+ * Choropleth maps are one of the most frequently used maps in infographic style
+ * visualizations. As the name suggests, color is the important part to these 
+ * maps. A color scale is assigned to categorical or numerical data, and the 
+ * value for each region is used to color the region. These maps usually use 
+ * political boundaries as the regions.
+ * 
  * @author Nacer Abreu
  */
 public class DataMapPlugin implements Plugin {
@@ -20,7 +24,7 @@ public class DataMapPlugin implements Plugin {
         this.questions = eval.getQuestions();
         this.index = 0;
         this.initialized = false;
-        
+
         // Calling init() from the constructor is a temporary fix.
         // Ideally the plugin-user should call this routine whenever
         // it is ready to to use the plugin. Instead, of being done
@@ -34,21 +38,19 @@ public class DataMapPlugin implements Plugin {
         int time = 30;
         int score = 0;
         String type = "s";
-        
+
         String question = "What's the percentage of most populated state/area?";
         Question obj = eval.buildQuestion(question, time, type, score);
-        
+
         // Determine the maximum value in the data set
         double max = eval.getDatapoints().get(0).getValueY();
-        
+
         //iterate through all of the datapoints find the min
-        for(int i =1; i < eval.getDatapoints().size(); i++)
-        {
-            if( eval.getDatapoints().get(i).getPercent() > max)
-            {
+        for (int i = 1; i < eval.getDatapoints().size(); i++) {
+            if (eval.getDatapoints().get(i).getPercent() > max) {
                 max = eval.getDatapoints().get(i).getPercent();
-            }            
-        } 
+            }
+        }
         obj.setAnswer(Double.toString(max));
         return obj;
     }//end of findMax()
@@ -60,7 +62,7 @@ public class DataMapPlugin implements Plugin {
         String type = "s";
         String question = "What's the percentage of the least populated state/area?";
         Question obj = eval.buildQuestion(question, time, type, score);
-        
+
         // Determine the minimum value in the data set
         double min = eval.getDatapoints().get(0).getValueY();
 
@@ -138,25 +140,20 @@ public class DataMapPlugin implements Plugin {
         }
         return accomplished;
     }//end of init()   
-    
+
     /**
      * This method will append to the list of "canned" questions, the ones
-     * particular to this plugin. This method makes the following assumptions:
-     * 1. The time suggested length of question is 30 seconds 
-     * 2. The type of answer is always a string. 
-     * 3. The question is always rated as 0 (zero)
+     * particular to this plugin. This method makes the following assumption(s):
+     * 1. The question is always rated as 0 (zero)
      */
     private void append(String question, int time, String type) {
         int score = 0;
         Question obj = eval.buildQuestion(question, time, type, score);
         questions.add(obj);
 
-    }    
-        
+    }//end of append()    
     private Evaluation eval;
     private ArrayList<Question> questions;
-    private int index; /** Current Question index */
-    private boolean initialized;
-
-
+    private int index;
+    private boolean initialized; /* Current Question index */
 }
