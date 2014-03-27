@@ -10,7 +10,13 @@ import DataObject.Question;
 
 
 /**
- * Pert Chart Plugin implementation
+ * Pert Chart Plugin implementation.
+ * The Program (or Project) Evaluation and Review Technique, commonly 
+ * abbreviated PERT, is a statistical tool, used in project management, that is 
+ * designed to analyze and represent the tasks involved in completing a given 
+ * project. First developed by the United States Navy in the 1950s, it is 
+ * commonly used in conjunction with the critical path method (CPM).
+ *
  * @author Nacer Abreu
  */
 public class PertChartQuestion extends QuestionBase {
@@ -68,10 +74,6 @@ public class PertChartQuestion extends QuestionBase {
      * 1. The time suggested length of question is 30 seconds 
      * 2. The type of answer is always a string. 
      * 3. The question is always rated as 0 (zero)
-     */
-	/**
-     * This method will append to the list of "canned" questions, the ones
-     * particular to this plugin. 
      */
     private void append(String question, int time, String type) {
         int score = 0;
