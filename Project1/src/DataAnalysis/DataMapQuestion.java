@@ -36,7 +36,7 @@ public class DataMapQuestion extends QuestionBase {
 	 * @see DataAnalysis.QuestionBase#finMax()
 	 */
 	@Override
-	Question finMax() {
+	public Question finMax() {
 		 int time = 30;
 	        int score = 0;
 	        String type = "s";
@@ -63,7 +63,7 @@ public class DataMapQuestion extends QuestionBase {
 	 * @see DataAnalysis.QuestionBase#findMin()
 	 */
 	@Override
-	Question findMin() {
+	public Question findMin() {
 		int time = 30;
         int score = 0;
         String type = "s";
@@ -88,7 +88,7 @@ public class DataMapQuestion extends QuestionBase {
 	 * @see DataAnalysis.QuestionBase#findOutlier()
 	 */
 	@Override
-	Question findOutlier() {
+	public Question findOutlier() {
 		// This kind of plugin does not contain outliers
         return null;
 	}
@@ -97,7 +97,7 @@ public class DataMapQuestion extends QuestionBase {
 	 * @see DataAnalysis.QuestionBase#findRecomendation()
 	 */
 	@Override
-	Question findRecomendation() {
+	public Question findRecomendation() {
 		 // This kind of plugin does not contain any recommendation questions
         return null;
 	}
@@ -106,7 +106,7 @@ public class DataMapQuestion extends QuestionBase {
 	 * @see DataAnalysis.QuestionBase#exploration()
 	 */
 	@Override
-	Question exploration() {
+	public Question exploration() {
 		// TODO Auto-generated method stub
 		return null;
 	}

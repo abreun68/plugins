@@ -22,31 +22,31 @@ public class ConceptFanQuestion extends QuestionBase {
 	}
 
 	@Override
-	Question finMax() {
+	public Question finMax() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	Question findMin() {
+	public Question findMin() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	Question findOutlier() {
+	public Question findOutlier() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	Question findRecomendation() {
+	public Question findRecomendation() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	Question exploration() {
+	public Question exploration() {
 		// TODO Auto-generated method stub
 		return null;
 	}

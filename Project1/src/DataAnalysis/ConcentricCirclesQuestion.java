@@ -20,7 +20,7 @@ public class ConcentricCirclesQuestion extends QuestionBase {
 		append("Does the location of the center circles have an effect on the visualization?", 60, "s");
 	}
 	
-	Question findTotal() {
+	public Question findTotal() {
 		double total = eval.getDatapoints().get(0).getEdges();
 
 
@@ -36,7 +36,7 @@ public class ConcentricCirclesQuestion extends QuestionBase {
 		return newQuestion;
 	}
 	
-	Question findPercentage() {
+	public Question findPercentage() {
 		double percent = eval.getDatapoints().get(0).getPercent();
 
 		String answer = "[" + new Double(percent).toString();
@@ -53,31 +53,31 @@ public class ConcentricCirclesQuestion extends QuestionBase {
 	}
 
 	@Override
-	Question finMax() {
+	public Question finMax() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	Question findMin() {
+	public Question findMin() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	Question findOutlier() {
+	public Question findOutlier() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	Question findRecomendation() {
+	public Question findRecomendation() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	Question exploration() {
+	public Question exploration() {
 		// TODO Auto-generated method stub
 		return null;
 	}

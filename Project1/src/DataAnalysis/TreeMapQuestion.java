@@ -26,31 +26,31 @@ public class TreeMapQuestion extends QuestionBase {
 	}
 
 	@Override
-	Question finMax() {
+	public Question finMax() {
 		  // This kind of plugin does not contain any min/max question
         return null;
 	}
 
 	@Override
-	Question findMin() {
+	public Question findMin() {
 		  // This kind of plugin does not contain any min/max question
         return null;
 	}
 
 	@Override
-	Question findOutlier() {
+	public Question findOutlier() {
 		 // This kind of plugin does not contain outliers
 		return null;
 	}
 
 	@Override
-	Question findRecomendation() {
+	public Question findRecomendation() {
 		// This kind of plugin does not contain any recommendation questions
 		return null;
 	}
 
 	@Override
-	Question exploration() {
+	public Question exploration() {
 		// TODO Auto-generated method stub
 		return null;
 	}

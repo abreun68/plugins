@@ -19,7 +19,7 @@ public class TimelineQuestion extends QuestionBase {
 	}
 
 	@Override
-	Question finMax() {
+	public Question finMax() {
 		Question newQuestion = new Question( "Who has the longest timeline?", 30, "s", 0);
 		double max           = eval.getDatapoints().get(0).getValueY();
 		double temp_max      = 0.0;
@@ -40,7 +40,7 @@ public class TimelineQuestion extends QuestionBase {
 	}
 
 	@Override
-	Question findMin() {
+	public Question findMin() {
 		Question newQuestion = new Question("Who has the shortest timeline?", 30, "s", 0);
 		double min           = eval.getDatapoints().get(0).getValueY();
 		double temp_min      = 0.0;
@@ -61,19 +61,19 @@ public class TimelineQuestion extends QuestionBase {
 	}
 
 	@Override
-	Question findOutlier() {
+	public Question findOutlier() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	Question findRecomendation() {
+	public Question findRecomendation() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	Question exploration() {
+	public Question exploration() {
 		// TODO Auto-generated method stub
 		return null;
 	}
