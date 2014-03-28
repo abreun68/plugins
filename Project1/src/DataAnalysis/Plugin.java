@@ -95,8 +95,9 @@ public interface Plugin
     
     
      /**     
-     * This method is used to call the initialize process of the plugin.
-     * 
+     * This method is used to call the initialize process of the plugin. The 
+     * intent of this method is for the user of the plugin to call this method 
+     * once before utilizing the plugin. 
      * @return true, if initialization was accomplished. Otherwise, false
      */
     public boolean init();

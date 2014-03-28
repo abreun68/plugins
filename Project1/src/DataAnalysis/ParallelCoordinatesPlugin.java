@@ -22,6 +22,11 @@ import java.util.Random;
  */
 public class ParallelCoordinatesPlugin implements Plugin {
 
+    /**
+     * Constructor. 
+     * @param eval Object used to interact with the underlying data-points and 
+     * questions data structures. 
+     */
     public ParallelCoordinatesPlugin(Evaluation eval) {
 
         this.eval = eval;
@@ -30,8 +35,8 @@ public class ParallelCoordinatesPlugin implements Plugin {
         this.initialized = false;
         
         // Calling init() from the constructor is a temporary fix.
-        // Ideally the plugin-user should call this routine whenever
-        // it is ready to to use the plugin. Instead, of being done
+        // Ideally the user of the plugin should call this routine once, before
+        // it is ready to to use the plugin, instead, of being done
         // automatically in the constructor.
         init();
         
