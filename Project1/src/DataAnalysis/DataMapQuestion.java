@@ -23,6 +23,7 @@ public class DataMapQuestion extends QuestionBase {
 	
 	/**
 	 * 
+	 * @param eval
 	 */
 	public DataMapQuestion(EvalObject eval) {
 		this.eval = eval;
@@ -39,9 +40,12 @@ public class DataMapQuestion extends QuestionBase {
 		append("Are the colors used representatives of the data in any way?", 60, "s");
 	}
 
-	/* (non-Javadoc)
-	 * @see DataAnalysis.QuestionBase#finMax()
-	 */
+	/**
+	 * This method returns a question and answer about the 
+	 * maximum value on the current graph.
+     * 
+     * @return a question about a maximum value on the graph   
+     */
 	@Override
 	public Question finMax() {
 		 int time = 30;
@@ -66,9 +70,12 @@ public class DataMapQuestion extends QuestionBase {
 	        return obj;
 	}
 
-	/* (non-Javadoc)
-	 * @see DataAnalysis.QuestionBase#findMin()
-	 */
+	/**
+	 * This method returns a question and answer about the 
+	 * minimum value on the current graph.
+     * 
+     * @return a question about a minimum value on the graph   
+     */
 	@Override
 	public Question findMin() {
 		int time = 30;
@@ -91,40 +98,48 @@ public class DataMapQuestion extends QuestionBase {
         return obj;
 	}
 
-	/* (non-Javadoc)
-	 * @see DataAnalysis.QuestionBase#findOutlier()
-	 */
+	/**
+     * This method returns a question and answer about the 
+	 * any outlier values on the current graph.
+     * 
+     * @return a question about an outlier 
+     */
 	@Override
 	public Question findOutlier() {
 		// This kind of plugin does not contain outliers
         return null;
 	}
 
-	/* (non-Javadoc)
-	 * @see DataAnalysis.QuestionBase#findRecomendation()
-	 */
+	/**
+     * This method returns a question and answer about the 
+	 * any recommendations based on the current graph.
+     * 
+     * @return a question asking a user to recommend something  
+     */
 	@Override
 	public Question findRecomendation() {
 		 // This kind of plugin does not contain any recommendation questions
         return null;
 	}
 
-	/* (non-Javadoc)
-	 * @see DataAnalysis.QuestionBase#exploration()
-	 */
+	/**
+	 * This method returns a question about the 
+	 * exploring the current graph.
+     * 
+     * @return a question about exploring the graph 
+     */
 	@Override
 	public Question exploration() {
-		// TODO Auto-generated method stub
+		// This kind of plugin does not contain any exploration questions
 		return null;
 	}
 
-	/* (non-Javadoc)
-	 * @see DataAnalysis.QuestionBase#modifyQuestion(java.lang.String, int, java.lang.String)
-	 */
 	@Override
 	String modifyQuestion(String s, int num, String l) {
-		// TODO Auto-generated method stub
-		return null;
+
+		s = s.substring(0, s.indexOf("blank"));
+
+		return s;
 	}
 	
     /**
