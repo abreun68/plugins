@@ -24,32 +24,32 @@ public abstract class QuestionBase
      * 
      * @return a question about a max value on the graph
      */
-    abstract Question finMax( );
+    public abstract Question finMax( );
     
     /**
      * 
      * @return a question about a minimum value on the graph   
      */
-    abstract Question  findMin();
+    public abstract Question  findMin();
     
     /**
      * 
      * @return a question about an outlier 
      */
-    abstract Question findOutlier();
+    public abstract Question findOutlier();
     
     /**
      * 
      * 
      * @return a question asking a user to recommend something  
      */
-    abstract Question findRecomendation(); 
+    public abstract Question findRecomendation(); 
     
     /**
      * 
      * @return a question about exploring the graph 
      */
-    abstract Question exploration();
+    public abstract Question exploration();
     
     
     abstract String modifyQuestion(String s, int num, String l);
