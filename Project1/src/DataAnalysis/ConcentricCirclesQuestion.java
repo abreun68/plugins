@@ -47,7 +47,7 @@ public class ConcentricCirclesQuestion extends QuestionBase {
 		}
 		
 		//create a new question object 
-		Question newQuestion = new Question("What’s the total population of users?", 60, "s", 0);
+		Question newQuestion = new Question("What's the total population of users?", 60, "s", 0);
 		newQuestion.setAnswer(new Double(total).toString());
 		return newQuestion;
 	}

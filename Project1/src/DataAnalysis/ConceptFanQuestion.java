@@ -28,7 +28,7 @@ public class ConceptFanQuestion extends QuestionBase {
 		append("Are arrows used from the initial problem definition to a new one, shows the linkage between the problems?", 60, "s");
 		append("Does the visualization leads to a satisfactory solution?", 60, "s");
 		append("Is each circle labelled?", 60, "s");
-		append("Work associated with problem solutions, what’s better? Easier?", 60, "s");
+		append("Work associated with problem solutions, what's better? Easier?", 60, "s");
 	}
 
 	/**
